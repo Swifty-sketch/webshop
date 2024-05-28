@@ -3,11 +3,10 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import { FaBars } from "react-icons/fa";
 import {
-  AiOutlineClose,
-  AiOutlineInstagram,
-  AiOutlineFacebook,
-  AiOutlineTwitter,
+  AiOutlineClose
 } from "react-icons/ai";
+import { MdShoppingCart } from "react-icons/md";
+
 
 import { useState } from "react";
 
@@ -23,7 +22,7 @@ function Navbar() {
       <div className="flex justify-between items-center w-full h-full px-4 2xl:px-16">
         <Link to="/">
           {/* Logo here */}
-          <h1>Name</h1>
+          <h1 className="text-xl">Shoes & Stiches</h1>
         </Link>
         <div className="hidden sm:flex">
           <ul className="hidden sm:flex gap-2">
@@ -51,10 +50,20 @@ function Navbar() {
                 Products
               </Link>
             </li>
+            <li>
+              <Link>
+              <MdShoppingCart size={30}/>
+              </Link>
+              </li>
           </ul>
         </div>
         <div onClick={handleNav} className="sm:hidden cursor-pointer pl-24">
-          <FaBars size={25} />
+          <ul className="flex items-center gap-2">
+            <li><MdShoppingCart size={25}/></li>
+            <li className="mr-8"><FaBars size={25} /></li>
+        </ul>
+          
+          
         </div>
       </div>
       <div
@@ -98,17 +107,6 @@ function Navbar() {
             </Link>
           </li>
         </ul>
-        <div className="flex flex-row justify-between pt-20 items-center">
-          <Link to="/">
-            <AiOutlineInstagram size={25} className="cursor-pointer" />
-          </Link>
-          <Link to="/">
-            <AiOutlineFacebook size={25} className="cursor-pointer" />
-          </Link>
-          <Link to="/">
-            <AiOutlineTwitter size={25} className="cursor-pointer" />
-          </Link>
-        </div>
       </div>
     </nav>
   );
