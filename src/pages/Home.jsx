@@ -15,12 +15,12 @@ const Home = () => {
             Time to update your wardrobe?
           </h1>
           <p className="text-2xl mb-8 ">
-            Cheapest on the market. Pay with Crpto with ease.
+            Or just to treat yourself.
           </p>
           <div className="flex justify-center mx-auto">
             <Link
               className="hover:underline bg-white text-gray-800 font-bold rounded-full  py-4 px-8">
-              Shop
+              Browse
             </Link>
           </div>
         </div>

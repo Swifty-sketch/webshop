@@ -12,12 +12,19 @@ const Products = () => {
       fetch('https://fakestoreapi.com/products')
         .then(response => response.json())
         .then(data => {
-          const randomProducts = Array.from({ length: 2 }, () => {
+          const selectedProducts = [];
+          while (selectedProducts.length < 2) {
             const randomIndex = Math.floor(Math.random() * data.length);
-            return data[randomIndex];
-          });
-          localStorage.setItem('randomProducts', JSON.stringify(randomProducts));
-          setProducts(randomProducts);
+            const randomProduct = data[randomIndex];
+            if (!selectedProducts.some(product => product.id === randomProduct.id)) {
+              selectedProducts.push({
+                ...randomProduct,
+                category: randomProduct.category // Add category to each product
+              });
+            }
+          }
+          localStorage.setItem('randomProducts', JSON.stringify(selectedProducts));
+          setProducts(selectedProducts);
         })
         .catch(error => console.error('Error fetching data:', error));
     }

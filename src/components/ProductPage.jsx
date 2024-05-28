@@ -32,7 +32,7 @@ const ProductPage = ({ location }) => {
                 {product.title}
               </h1>
               {/* Product Description */}
-              <p className="mt-3 text-gray-600 text-md leading-6 text-justify sm:text-left sm:mt-4">
+              <p className="mt-3 text-gray-600 text-md leading-6 text-justify sm:text-left sm:mt-4" style={{ maxWidth: '420px' }}>
                 {product.description}
               </p>
               {/* Star Ratings */}
