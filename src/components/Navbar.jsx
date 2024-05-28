@@ -50,7 +50,7 @@ function Navbar() {
                 Products
               </Link>
             </li>
-            <li>
+            <li className="mr-8">
               <Link>
               <MdShoppingCart size={30}/>
               </Link>
