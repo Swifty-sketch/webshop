@@ -19,15 +19,15 @@ const ProductCard = ({ product, handleClick }) => {
   };
 
   return (
-    <Card className="w-96">
-      <CardHeader shadow={false} floated={false} className="h-96">
+    <Card className="max-w-[300px] mx-auto">
+      <CardHeader shadow={false} floated={false} className="h-56 flex justify-center items-center">
         <img
           src={product.image}
           alt={product.title}
-          className="h-full w-full object-cover"
+          className="h-48 w-half object-cover rounded-t-md"
         />
       </CardHeader>
-      <CardBody>
+      <CardBody className="p-4"> {/* Added padding to the CardBody */}
         <div className="mb-2 flex items-center justify-between">
           <Typography color="blue-gray" className="font-medium">
             {truncateString(product.title, 20)}

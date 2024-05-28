@@ -1,14 +1,8 @@
-// src/components/Navbar.jsx
-import React from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import { FaBars } from "react-icons/fa";
-import {
-  AiOutlineClose
-} from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai";
 import { MdShoppingCart } from "react-icons/md";
-
-
-import { useState } from "react";
 
 function Navbar() {
   const [nav, setNav] = useState(false);
@@ -18,7 +12,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="fixed w-full h-24 shadow-xl bg-white">
+    <nav className="fixed w-full h-24 shadow-xl bg-white z-10"> {/* Added z-10 for higher z-index */}
       <div className="flex justify-between items-center w-full h-full px-4 2xl:px-16">
         <Link to="/">
           {/* Logo here */}
@@ -52,18 +46,16 @@ function Navbar() {
             </li>
             <li className="mr-8">
               <Link>
-              <MdShoppingCart size={30}/>
+                <MdShoppingCart size={30}/>
               </Link>
-              </li>
+            </li>
           </ul>
         </div>
         <div onClick={handleNav} className="sm:hidden cursor-pointer pl-24">
           <ul className="flex items-center gap-2">
             <li><MdShoppingCart size={25}/></li>
             <li className="mr-8"><FaBars size={25} /></li>
-        </ul>
-          
-          
+          </ul>
         </div>
       </div>
       <div
