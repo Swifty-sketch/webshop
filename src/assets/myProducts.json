@@ -4,7 +4,7 @@
         "price": 70,
         "description": "Description of Product 1",
         "image": "https://i8.amplience.net/i/jpl/jd_058161_a?qlt=92&w=600&h=425&v=1&fmt=auto",
-        "catagory": "shoe"
+        "category": "shoe"
     },
 
     {
@@ -13,7 +13,7 @@
         "price": 110,
         "description": "Description of Product 2",
         "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/14de6943-8c87-4b9b-9585-80dea96a70d3/air-max-97-shoes-skcMPS.png",
-        "catagory": "shoe"
+        "category": "shoe"
     },
 
     {
@@ -22,6 +22,6 @@
         "price": 10007,
         "description": "Description of Product 2",
         "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/14de6943-8c87-4b9b-9585-80dea96a70d3/air-max-97-shoes-skcMPS.png",
-        "catagory": "shirt"
+        "category": "shoe"
     }
 ]

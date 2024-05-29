@@ -12,34 +12,46 @@ const ProductPage = ({ location }) => {
     return <div>Loading...</div>; // Or handle the case where product is undefined
   }
 
+  // Log the entire product object
+  console.log("Product:", product);
+
   // Function to render size buttons based on category
   const renderSizeButtons = () => {
-    if (product.category && product.category.toLowerCase() === "shoe") {
-      return (
-        <div className="flex flex-wrap gap-2 mt-4">
-          {["35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45"].map(size => (
-            <button
-              key={size}
-              className="border border-gray-300 text-sm font-semibold mb-1 py-2 px-4 rounded-md hover:bg-gray-200"
-            >
-              {size}
-            </button>
-          ))}
-        </div>
-      );
+    // Check if product category is defined
+    if (product.category) {
+      const isShoeCategory = product.category === "shoe";
+      console.log("Is Shoe Category:", isShoeCategory);
+      
+      if (isShoeCategory) {
+        return (
+          <div className="flex flex-wrap gap-2 mt-4">
+            {["35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45"].map(size => (
+              <button
+                key={size}
+                className="border border-gray-300 text-sm font-semibold mb-1 py-2 px-4 rounded-md hover:bg-gray-200"
+              >
+                {size}
+              </button>
+            ))}
+          </div>
+        );
+      } else {
+        return (
+          <div className="flex flex-wrap gap-2 mt-4">
+            {["S", "M", "L", "XL"].map(size => (
+              <button
+                key={size}
+                className="border border-gray-300 text-sm font-semibold mb-1 py-2 px-4 rounded-md hover:bg-gray-200"
+              >
+                {size}
+              </button>
+            ))}
+          </div>
+        );
+      }
     } else {
-      return (
-        <div className="flex flex-wrap gap-2 mt-4">
-          {["S", "M", "L", "XL"].map(size => (
-            <button
-              key={size}
-              className="border border-gray-300 text-sm font-semibold mb-1 py-2 px-4 rounded-md hover:bg-gray-200"
-            >
-              {size}
-            </button>
-          ))}
-        </div>
-      );
+      // Handle the case where product category is undefined or null
+      return <div>No category specified</div>;
     }
   };
 
