@@ -59,7 +59,7 @@ const Products = () => {
     if (category === 'all') {
       setFilteredProducts(productList);
     } else {
-      const filtered = productList.filter(product => product.catagory === category);
+      const filtered = productList.filter(product => product.category === category);
       setFilteredProducts(filtered);
     }
     setCurrentPage(1); // Reset to the first page
