@@ -19,7 +19,7 @@ const ProductCard = ({ product, handleClick }) => {
   };
 
   return (
-    <Card className="max-w-[300px] mx-auto">
+    <Card className="max-w-[300px] mx-auto h-[400px] flex flex-col">
       <CardHeader shadow={false} floated={false} className="h-56 flex justify-center items-center">
         <img
           src={product.image}
@@ -27,7 +27,7 @@ const ProductCard = ({ product, handleClick }) => {
           className="h-48 w-half object-cover rounded-t-md"
         />
       </CardHeader>
-      <CardBody className="p-4"> {/* Added padding to the CardBody */}
+      <CardBody className="p-4 flex-grow">
         <div className="mb-2 flex items-center justify-between">
           <Typography color="blue-gray" className="font-medium">
             {truncateString(product.title, 20)}
@@ -45,7 +45,7 @@ const ProductCard = ({ product, handleClick }) => {
         </Typography>
       </CardBody>
       <CardFooter className="pt-0">
-        <Link to={{ pathname: '/productpage', state: { product } }}>
+        <Link to={{ pathname: '/productpage', state: { product } }} className="mt-auto">
           <Button
             ripple={false}
             fullWidth={true}
