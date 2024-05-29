@@ -12,6 +12,37 @@ const ProductPage = ({ location }) => {
     return <div>Loading...</div>; // Or handle the case where product is undefined
   }
 
+  // Function to render size buttons based on category
+  const renderSizeButtons = () => {
+    if (product.category && product.category.toLowerCase() === "shoe") {
+      return (
+        <div className="flex flex-wrap gap-2 mt-4">
+          {["35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45"].map(size => (
+            <button
+              key={size}
+              className="border border-gray-300 text-sm font-semibold mb-1 py-2 px-4 rounded-md hover:bg-gray-200"
+            >
+              {size}
+            </button>
+          ))}
+        </div>
+      );
+    } else {
+      return (
+        <div className="flex flex-wrap gap-2 mt-4">
+          {["S", "M", "L", "XL"].map(size => (
+            <button
+              key={size}
+              className="border border-gray-300 text-sm font-semibold mb-1 py-2 px-4 rounded-md hover:bg-gray-200"
+            >
+              {size}
+            </button>
+          ))}
+        </div>
+      );
+    }
+  };
+
   return (
     <div className="p-3 max-w-7xl m-auto">
       <div className="mt-6 sm:mt-10">
@@ -35,12 +66,12 @@ const ProductPage = ({ location }) => {
               <p className="mt-3 text-gray-600 text-md leading-6 text-justify sm:text-left sm:mt-4" style={{ maxWidth: '420px' }}>
                 {product.description}
               </p>
-              {/* Star Ratings */}
-              {/* Assuming you want to keep the placeholder for ratings */}
               {/* Product Price */}
               <span className="text-xl text-red-500 font-semibold sm:text-2xl">
                 {`$${product.price}`}
               </span>
+              {/* Size Buttons */}
+              {renderSizeButtons()}
             </div>
             {/* Quantity Input and Order Button */}
             <div className=" ">

@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import myProducts from '../assets/myProducts.json';
 
 const Products = () => {
-  // State variables for products and current page
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 20; // Number of products to display per page
+  const productsPerPage = 20;
+
+  const navigate = useNavigate();
+  const { category } = useParams();
 
   useEffect(() => {
-    // Fetch products from local storage or API
     const storedProducts = JSON.parse(localStorage.getItem('randomProducts'));
     if (storedProducts && storedProducts.length) {
       setProducts(storedProducts);
+      filterProducts(category || 'all', storedProducts);
     } else {
       fetch('https://fakestoreapi.com/products')
         .then(response => response.json())
@@ -22,16 +26,17 @@ const Products = () => {
           const shuffledProducts = shuffleArray(allProducts);
           localStorage.setItem('randomProducts', JSON.stringify(shuffledProducts));
           setProducts(shuffledProducts);
+          filterProducts(category || 'all', shuffledProducts);
         })
         .catch(error => {
           console.error('Error fetching data from API:', error);
           setProducts(myProducts);
+          filterProducts(category || 'all', myProducts);
         });
     }
-  }, []);
+  }, [category]);
 
   const shuffleArray = (array) => {
-    // Shuffle the array of products
     const shuffled = array.slice();
     for (let i = shuffled.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -41,24 +46,54 @@ const Products = () => {
   };
 
   const handleClick = (product) => {
-    // Store the selected product in local storage
     localStorage.setItem('currentProduct', JSON.stringify(product));
   };
 
-  // Calculate the index of the last and first product on the current page
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  // Get the products for the current page
-  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+  const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
 
-  // Function to handle pagination
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  const filterProducts = (category, productList = products) => {
+    if (category === 'all') {
+      setFilteredProducts(productList);
+    } else {
+      const filtered = productList.filter(product => product.catagory === category);
+      setFilteredProducts(filtered);
+    }
+    setCurrentPage(1); // Reset to the first page
+  };
+
+  const handleCategoryClick = (category) => {
+    navigate(`/products/${category}`);
+    filterProducts(category);
+  };
 
   return (
     <div className="container mx-auto py-8">
       <h1 className="text-2xl font-bold mb-4">Random Products</h1>
+      <div className="flex justify-center mb-4">
+        <button
+          onClick={() => handleCategoryClick('all')}
+          className="mx-2 px-4 py-2 border bg-white hover:bg-gray-100"
+        >
+          All
+        </button>
+        <button
+          onClick={() => handleCategoryClick('shoe')}
+          className="mx-2 px-4 py-2 border bg-white hover:bg-gray-100"
+        >
+          Shoes
+        </button>
+        <button
+          onClick={() => handleCategoryClick('shirt')}
+          className="mx-2 px-4 py-2 border bg-white hover:bg-gray-100"
+        >
+          Shirts
+        </button>
+      </div>
       <div className="flex flex-wrap justify-center gap-1">
-        {/* Render product cards for the current page */}
         {currentProducts.map((product, index) => (
           <ProductCard
             key={index}
@@ -67,9 +102,8 @@ const Products = () => {
           />
         ))}
       </div>
-      {/* Pagination buttons */}
       <div className="flex justify-center mt-4">
-        {Array.from({ length: Math.ceil(products.length / productsPerPage) }).map((_, index) => (
+        {Array.from({ length: Math.ceil(filteredProducts.length / productsPerPage) }).map((_, index) => (
           <button
             key={index}
             onClick={() => paginate(index + 1)}
