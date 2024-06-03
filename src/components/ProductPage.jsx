@@ -7,8 +7,9 @@ const ProductPage = ({ location }) => {
   // Use the product from localStorage if available, otherwise use the one from props
   const product = storedProduct || (location && location.state && location.state.product);
 
-  // State for the selected size
+  // State for the selected size and quantity
   const [selectedSize, setSelectedSize] = useState(null);
+  const [quantity, setQuantity] = useState(1);
 
   // Check if product is defined before accessing its properties
   if (!product) {
@@ -68,8 +69,8 @@ const ProductPage = ({ location }) => {
     }
 
     const cartStorage = JSON.parse(localStorage.getItem('cartStorage')) || [];
-    const productWithSize = { ...product, size: selectedSize };
-    cartStorage.push(productWithSize);
+    const productWithSizeAndQuantity = { ...product, size: selectedSize, quantity: quantity };
+    cartStorage.push(productWithSizeAndQuantity);
     localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
     alert('Product added to cart!');
   };
@@ -113,7 +114,9 @@ const ProductPage = ({ location }) => {
                 <input
                   className="border border-gray-300 text-sm font-semibold mb-1 max-w-full w-full outline-none rounded-md m-0 py-3 px-4 md:py-3 md:px-4 md:mb-0 focus:border-red-500"
                   type="number"
-                  defaultValue="1"
+                  value={quantity}
+                  onChange={(e) => setQuantity(e.target.value)}
+                  min="1"
                   required
                 />
               </div>
