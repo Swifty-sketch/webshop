@@ -72,7 +72,7 @@ const Products = () => {
 
   return (
     <div className="container mx-auto py-8">
-      <h1 className="text-2xl font-bold mb-4">Random Products</h1>
+      <h1 className="text-2xl font-bold mb-4 text-center">Random Products</h1>
       <div className="flex justify-center mb-4">
         <button
           onClick={() => handleCategoryClick('all')}
@@ -93,7 +93,7 @@ const Products = () => {
           Shirts
         </button>
       </div>
-      <div className="flex flex-wrap justify-center gap-1">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         {currentProducts.map((product, index) => (
           <ProductCard
             key={index}
