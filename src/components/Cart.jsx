@@ -3,14 +3,29 @@ import React, { useEffect, useState } from 'react';
 function Cart({ isCartOpen, toggleCart }) {
   const [cartItems, setCartItems] = useState([]);
 
-  // Retrieve cart items from localStorage
+  // Retrieve cart items from localStorage and combine identical products
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem('cartStorage')) || [];
-    setCartItems(storedCart);
+    
+    const combinedCart = storedCart.reduce((acc, item) => {
+      const existingItem = acc.find(
+        accItem => accItem.title === item.title && accItem.size === item.size && accItem.price === item.price
+      );
+
+      if (existingItem) {
+        existingItem.quantity += item.quantity;
+      } else {
+        acc.push(item);
+      }
+
+      return acc;
+    }, []);
+
+    setCartItems(combinedCart);
   }, [isCartOpen]);
 
   // Calculate the subtotal
-  const subtotal = cartItems.reduce((total, item) => total + item.price, 0);
+  const subtotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
     <div
@@ -32,12 +47,21 @@ function Cart({ isCartOpen, toggleCart }) {
             />
             <div>
               <p className='font-semibold'>{item.title}</p>
-              <p>Price: {item.price} SEK</p>
+              <p>Price: {item.price} $</p>
               <p>Size: {item.size}</p>
+              <p>
+                Quantity: 
+                <input 
+                  type="number" 
+                  value={item.quantity} 
+                  readOnly 
+                  className="border border-gray-300 text-sm font-semibold w-12 ml-2"
+                />
+              </p>
             </div>
           </div>
         ))}
-        <p className="p-4 border-b">SUBTOTAL: {subtotal} SEK</p>
+        <p className="p-4 border-b">Total: {subtotal}$</p>
         <button className="bg-black text-white py-2 px-4 m-4 rounded">
           Checkout
         </button>
