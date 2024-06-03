@@ -1,26 +1,28 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaBars } from "react-icons/fa";
-import { AiOutlineClose } from "react-icons/ai";
-import { MdShoppingCart } from "react-icons/md";
+import { FaBars } from 'react-icons/fa';
+import { AiOutlineClose } from 'react-icons/ai';
+import { MdShoppingCart } from 'react-icons/md';
+import Cart from './Cart';
 
 function Navbar() {
-  // State to manage the visibility of the mobile navigation menu
   const [nav, setNav] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
-  // Function to toggle the mobile navigation menu visibility
   const handleNav = () => {
     setNav(!nav);
   };
 
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
+
   return (
-    <nav className="fixed w-full h-24 shadow-xl bg-white z-10"> {/* Fixed navbar with a higher z-index */}
+    <nav className="fixed w-full h-24 shadow-xl bg-white z-10">
       <div className="flex justify-between items-center w-full h-full px-4 2xl:px-16">
         <Link to="/">
-          {/* Logo here */}
-          <h1 className="text-xl">Shoes & Stiches</h1>
+          <h1 className="text-xl">Shoes & Stitches</h1>
         </Link>
-        {/* Desktop menu - hidden on small screens (sm:hidden) */}
         <div className="hidden sm:flex">
           <ul className="hidden sm:flex gap-2">
             <li className="mr-8">
@@ -48,35 +50,35 @@ function Navbar() {
               </Link>
             </li>
             <li className="mr-8">
-              <Link>
-                <MdShoppingCart size={30}/>
-              </Link>
+              <button onClick={toggleCart} className="text-xl">
+                <MdShoppingCart size={30} />
+              </button>
             </li>
           </ul>
         </div>
-        {/* Mobile menu icon - visible only on small screens (sm:hidden) */}
         <div className="sm:hidden cursor-pointer pl-24">
           <ul className="flex items-center gap-2">
-            <li><MdShoppingCart size={25}/></li>
-            <li className="mr-8"><FaBars onClick={handleNav} size={25} /></li>
+            <li>
+              <MdShoppingCart size={25} onClick={toggleCart} />
+            </li>
+            <li className="mr-8">
+              <FaBars onClick={handleNav} size={25} />
+            </li>
           </ul>
         </div>
       </div>
-      {/* Mobile navigation menu */}
       <div
         className={
           nav
-            ? "fixed left-0 top-0 w-48 sm:hidden h-screen bg-white p-10 ease-in-out duration-500 shadow-lg"
-            : "fixed left-[-100%] top-0 w-48 sm:hidden h-screen bg-white p-10 ease-in-out duration-500 shadow-lg"
+            ? 'fixed left-0 top-0 w-48 sm:hidden h-screen bg-white p-10 ease-in-out duration-500 shadow-lg'
+            : 'fixed left-[-100%] top-0 w-48 sm:hidden h-screen bg-white p-10 ease-in-out duration-500 shadow-lg'
         }
       >
-        {/* Close icon for the mobile menu */}
         <div className="flex w-full items-center justify-end">
           <div onClick={handleNav} className="cursor-pointer">
             <AiOutlineClose size={25} />
           </div>
         </div>
-        {/* Mobile menu links */}
         <ul className="flex flex-col gap-9 mt-10 ">
           <li>
             <Link
@@ -107,6 +109,7 @@ function Navbar() {
           </li>
         </ul>
       </div>
+      <Cart isCartOpen={isCartOpen} toggleCart={toggleCart} />
     </nav>
   );
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ProductPage = ({ location }) => {
   // Retrieve product from localStorage if available
@@ -6,6 +6,9 @@ const ProductPage = ({ location }) => {
 
   // Use the product from localStorage if available, otherwise use the one from props
   const product = storedProduct || (location && location.state && location.state.product);
+
+  // State for the selected size
+  const [selectedSize, setSelectedSize] = useState(null);
 
   // Check if product is defined before accessing its properties
   if (!product) {
@@ -24,7 +27,10 @@ const ProductPage = ({ location }) => {
             {["35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45"].map(size => (
               <button
                 key={size}
-                className="border border-gray-300 text-sm font-semibold mb-1 py-2 px-4 rounded-md hover:bg-gray-200"
+                className={`border border-gray-300 text-sm font-semibold mb-1 py-2 px-4 rounded-md hover:bg-gray-200 ${
+                  selectedSize === size ? 'bg-gray-300' : ''
+                }`}
+                onClick={() => setSelectedSize(size)}
               >
                 {size}
               </button>
@@ -37,7 +43,10 @@ const ProductPage = ({ location }) => {
             {["S", "M", "L", "XL"].map(size => (
               <button
                 key={size}
-                className="border border-gray-300 text-sm font-semibold mb-1 py-2 px-4 rounded-md hover:bg-gray-200"
+                className={`border border-gray-300 text-sm font-semibold mb-1 py-2 px-4 rounded-md hover:bg-gray-200 ${
+                  selectedSize === size ? 'bg-gray-300' : ''
+                }`}
+                onClick={() => setSelectedSize(size)}
               >
                 {size}
               </button>
@@ -49,6 +58,20 @@ const ProductPage = ({ location }) => {
       // Handle the case where product category is undefined or null
       return <div>No category specified</div>;
     }
+  };
+
+  // Function to handle the confirm order button click
+  const handleConfirmOrder = () => {
+    if (!selectedSize) {
+      alert('Please select a size');
+      return;
+    }
+
+    const cartStorage = JSON.parse(localStorage.getItem('cartStorage')) || [];
+    const productWithSize = { ...product, size: selectedSize };
+    cartStorage.push(productWithSize);
+    localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
+    alert('Product added to cart!');
   };
 
   return (
@@ -97,6 +120,7 @@ const ProductPage = ({ location }) => {
               {/* Order Button */}
               <div className="w-full text-left my-4">
                 <button
+                  onClick={handleConfirmOrder}
                   className="flex justify-center items-center gap-2 w-full py-3 px-4 bg-red-500 text-white text-md font-bold border border-red-500 rounded-md ease-in-out duration-150 shadow-slate-600 hover:bg-white hover:text-red-500 lg:m-0 md:px-6"
                   title="Confirm Order"
                 >
