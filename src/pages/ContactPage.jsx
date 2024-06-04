@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import emailjs from "emailjs-com";
-import "./Contact.css";
+import "./ContactPage.css";
 
-const Contact = () => {
+const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -115,4 +115,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactPage;
