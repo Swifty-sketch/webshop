@@ -25,15 +25,7 @@ function Navbar() {
         </Link>
         <div className="hidden sm:flex">
           <ul className="hidden sm:flex gap-2">
-            <li className="mr-8">
-              <Link
-                to="/"
-                className="text-xl uppercase hover:border-b-4 hover:border-red-300"
-              >
-                Home
-              </Link>
-            </li>
-            <li className="mr-8">
+          <li className="mr-8">
               <Link
                 to="/about"
                 className="text-xl uppercase hover:border-b-4 hover:border-red-300"
@@ -43,10 +35,26 @@ function Navbar() {
             </li>
             <li className="mr-8">
               <Link
+                to="/"
+                className="text-xl uppercase hover:border-b-4 hover:border-red-300"
+              >
+                Contact
+              </Link>
+            </li>
+            <li className="mr-8">
+              <Link
                 to="/products"
                 className="text-xl uppercase hover:border-b-4 hover:border-red-300"
               >
-                Products
+                Shoes
+              </Link>
+            </li>
+            <li className="mr-8">
+              <Link
+                to="/products"
+                className="text-xl uppercase hover:border-b-4 hover:border-red-300"
+              >
+                Clothing
               </Link>
             </li>
             <li className="mr-8">
@@ -80,16 +88,7 @@ function Navbar() {
           </div>
         </div>
         <ul className="flex flex-col gap-9 mt-10 ">
-          <li>
-            <Link
-              to="/"
-              onClick={() => setNav(false)}
-              className="text-xl uppercase hover:border-b-4 hover:border-red-300"
-            >
-              Home
-            </Link>
-          </li>
-          <li>
+        <li>
             <Link
               to="/about"
               onClick={() => setNav(false)}
@@ -100,11 +99,29 @@ function Navbar() {
           </li>
           <li>
             <Link
+              to="/"
+              onClick={() => setNav(false)}
+              className="text-xl uppercase hover:border-b-4 hover:border-red-300"
+            >
+              Contact
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/products"
               onClick={() => setNav(false)}
               className="text-xl uppercase hover:border-b-4 hover:border-red-300"
             >
-              Products
+              Shoes
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/products"
+              onClick={() => setNav(false)}
+              className="text-xl uppercase hover:border-b-4 hover:border-red-300"
+            >
+              Clothing
             </Link>
           </li>
         </ul>

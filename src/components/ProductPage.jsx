@@ -72,7 +72,6 @@ const ProductPage = ({ location }) => {
     const productWithSizeAndQuantity = { ...product, size: selectedSize, quantity: quantity };
     cartStorage.push(productWithSizeAndQuantity);
     localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
-    alert('Product added to cart!');
   };
 
   return (
