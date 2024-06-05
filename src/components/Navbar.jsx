@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FaBars } from 'react-icons/fa';
-import { AiOutlineClose } from 'react-icons/ai';
-import { MdShoppingCart } from 'react-icons/md';
-import Cart from './Cart';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { FaBars } from "react-icons/fa";
+import { AiOutlineClose } from "react-icons/ai";
+import { MdShoppingCart } from "react-icons/md";
+import Cart from "./Cart";
 
 function Navbar() {
   const [nav, setNav] = useState(false);
@@ -25,7 +25,7 @@ function Navbar() {
         </Link>
         <div className="hidden sm:flex">
           <ul className="hidden sm:flex gap-2">
-          <li className="mr-8">
+            <li className="mr-8">
               <Link
                 to="/about"
                 className="text-xl uppercase hover:border-b-4 hover:border-red-300"
@@ -35,7 +35,7 @@ function Navbar() {
             </li>
             <li className="mr-8">
               <Link
-                to="/"
+                to="/contact"
                 className="text-xl uppercase hover:border-b-4 hover:border-red-300"
               >
                 Contact
@@ -78,8 +78,8 @@ function Navbar() {
       <div
         className={
           nav
-            ? 'fixed left-0 top-0 w-48 sm:hidden h-screen bg-white p-10 ease-in-out duration-500 shadow-lg'
-            : 'fixed left-[-100%] top-0 w-48 sm:hidden h-screen bg-white p-10 ease-in-out duration-500 shadow-lg'
+            ? "fixed left-0 top-0 w-48 sm:hidden h-screen bg-white p-10 ease-in-out duration-500 shadow-lg"
+            : "fixed left-[-100%] top-0 w-48 sm:hidden h-screen bg-white p-10 ease-in-out duration-500 shadow-lg"
         }
       >
         <div className="flex w-full items-center justify-end">
@@ -88,7 +88,7 @@ function Navbar() {
           </div>
         </div>
         <ul className="flex flex-col gap-9 mt-10 ">
-        <li>
+          <li>
             <Link
               to="/about"
               onClick={() => setNav(false)}
@@ -99,7 +99,7 @@ function Navbar() {
           </li>
           <li>
             <Link
-              to="/"
+              to="/contact"
               onClick={() => setNav(false)}
               className="text-xl uppercase hover:border-b-4 hover:border-red-300"
             >

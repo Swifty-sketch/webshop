@@ -7,7 +7,7 @@ import Products from "./pages/Products";
 import About from "./pages/About";
 import ProductPage from "./components/ProductPage";
 import Footer from "./components/Footer";
-import Contact from "./pages/ContactPage";
+import Contact from "./pages/Contact";
 
 function App() {
   return (

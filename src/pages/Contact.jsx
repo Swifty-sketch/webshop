@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import emailjs from "emailjs-com";
-import "./Contact.css";
+import "./contact.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -53,7 +53,7 @@ const Contact = () => {
         <Row>
           <Col md={6}>
             <Form.Group controlId="formName">
-              <Form.Label>NAMN</Form.Label>
+              <Form.Label className="form-label">NAMN</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="NAMN"
@@ -61,12 +61,13 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
+                className="form-control"
               />
             </Form.Group>
           </Col>
           <Col md={6}>
             <Form.Group controlId="formPhone">
-              <Form.Label>Telefonnummer</Form.Label>
+              <Form.Label className="form-label">Telefonnummer</Form.Label>
               <Form.Control
                 type="tel"
                 placeholder="Telefonnummer"
@@ -74,12 +75,13 @@ const Contact = () => {
                 value={formData.phone}
                 onChange={handleChange}
                 required
+                className="form-control"
               />
             </Form.Group>
           </Col>
         </Row>
         <Form.Group controlId="formEmail">
-          <Form.Label>E-postadress</Form.Label>
+          <Form.Label className="form-label">E-postadress</Form.Label>
           <Form.Control
             type="email"
             placeholder="E-postadress"
@@ -87,10 +89,11 @@ const Contact = () => {
             value={formData.email}
             onChange={handleChange}
             required
+            className="form-control"
           />
         </Form.Group>
         <Form.Group controlId="formMessage">
-          <Form.Label>Meddelande</Form.Label>
+          <Form.Label className="form-label">Meddelande</Form.Label>
           <Form.Control
             as="textarea"
             rows={4}
@@ -99,6 +102,7 @@ const Contact = () => {
             value={formData.message}
             onChange={handleChange}
             required
+            className="form-control"
           />
         </Form.Group>
         <Button variant="danger" type="submit" className="submit-button">
