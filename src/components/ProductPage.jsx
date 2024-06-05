@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
-const ProductPage = ({ location }) => {
+const ProductPage = () => {
+  // Use the useLocation hook to access the state
+  const location = useLocation();
   // Retrieve product from localStorage if available
   const storedProduct = JSON.parse(localStorage.getItem('currentProduct'));
 
-  // Use the product from localStorage if available, otherwise use the one from props
-  const product = storedProduct || (location && location.state && location.state.product);
+  // Use the product from localStorage if available, otherwise use the one from location state
+  const product = storedProduct || (location.state && location.state.product);
 
   // State for the selected size and quantity
   const [selectedSize, setSelectedSize] = useState(null);

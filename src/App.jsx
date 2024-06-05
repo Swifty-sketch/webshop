@@ -20,6 +20,7 @@ function App() {
           <Route path="/products/:category" element={<Products />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/productpage" element={<ProductPage />} /> {/* Add this line */}
         </Routes>
       </div>
       <Footer />
