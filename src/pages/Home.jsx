@@ -23,7 +23,7 @@ const Home = () => {
             <Link
               className="hover:underline bg-white text-gray-800 font-bold rounded-full py-4 px-8"
             >
-              shop
+              Browse
             </Link>
           </div>
         </div>
