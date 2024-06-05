@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import emailjs from "emailjs-com";
-import "./Contact.css";
+//import "./Contact.css"; // Remove this import if you've deleted the file
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -43,18 +43,16 @@ const Contact = () => {
   };
 
   return (
-    <Container className="contact-container mx-auto p-4 bg-gray-100 rounded-lg shadow-md max-w-xl">
-      <h1 className="contact-title text-4xl text-center text-blue-600 mb-4">
-        KONTAKTA OSS
-      </h1>
-      <p className="contact-subtitle text-center text-gray-600 mb-8">
+    <div className="container mx-auto p-8 bg-gray-100 rounded-lg shadow-md max-w-xl mt-8">
+      <h1 className="text-4xl text-center text-blue-600 mb-4">KONTAKTA OSS</h1>
+      <p className="text-center text-gray-600 mb-8">
         Vänligen kontakta oss via vårt formulär eller våra kontaktuppgifter. Vi
         försöker alltid svara inom 24 timmar.
       </p>
       <Form onSubmit={handleSubmit}>
         <div className="mb-4">
           <Form.Group controlId="formName">
-            <Form.Label className="form-label block text-gray-700 font-bold mb-2">
+            <Form.Label className="block text-gray-700 font-bold mb-2">
               NAMN
             </Form.Label>
             <Form.Control
@@ -64,13 +62,13 @@ const Contact = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="form-control block w-full p-2 border border-gray-300 rounded"
+              className="block w-full p-2 border border-gray-300 rounded"
             />
           </Form.Group>
         </div>
         <div className="mb-4">
           <Form.Group controlId="formPhone">
-            <Form.Label className="form-label block text-gray-700 font-bold mb-2">
+            <Form.Label className="block text-gray-700 font-bold mb-2">
               Telefonnummer
             </Form.Label>
             <Form.Control
@@ -80,13 +78,13 @@ const Contact = () => {
               value={formData.phone}
               onChange={handleChange}
               required
-              className="form-control block w-full p-2 border border-gray-300 rounded"
+              className="block w-full p-2 border border-gray-300 rounded"
             />
           </Form.Group>
         </div>
         <div className="mb-4">
           <Form.Group controlId="formEmail">
-            <Form.Label className="form-label block text-gray-700 font-bold mb-2">
+            <Form.Label className="block text-gray-700 font-bold mb-2">
               E-postadress
             </Form.Label>
             <Form.Control
@@ -96,13 +94,13 @@ const Contact = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="form-control block w-full p-2 border border-gray-300 rounded"
+              className="block w-full p-2 border border-gray-300 rounded"
             />
           </Form.Group>
         </div>
         <div className="mb-4">
           <Form.Group controlId="formMessage">
-            <Form.Label className="form-label block text-gray-700 font-bold mb-2">
+            <Form.Label className="block text-gray-700 font-bold mb-2">
               Meddelande
             </Form.Label>
             <Form.Control
@@ -113,20 +111,20 @@ const Contact = () => {
               value={formData.message}
               onChange={handleChange}
               required
-              className="form-control block w-full p-2 border border-gray-300 rounded"
+              className="block w-full p-2 border border-gray-300 rounded"
             />
           </Form.Group>
         </div>
         <Button
           variant="danger"
           type="submit"
-          className="submit-button w-full py-2 bg-red-500 text-white font-bold rounded hover:bg-red-600"
+          className="w-full py-2 bg-red-500 text-white font-bold rounded hover:bg-red-600"
         >
           Skicka
         </Button>
       </Form>
       {showConfirmation && (
-        <div className="confirmation-dialog mt-4 p-4 border border-green-500 bg-green-100 text-green-700 rounded text-center">
+        <div className="mt-4 p-4 border border-green-500 bg-green-100 text-green-700 rounded text-center">
           <p>Your message was sent successfully!</p>
           <Button
             onClick={() => setShowConfirmation(false)}
@@ -136,7 +134,7 @@ const Contact = () => {
           </Button>
         </div>
       )}
-    </Container>
+    </div>
   );
 };
 
