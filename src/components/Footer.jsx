@@ -30,7 +30,7 @@ export default function Footer({ mode }) {
 
   return (
     <footer className="text-gray-600 body-font bg-gray-300" style={{ backgroundColor: mode === 'dark' ? 'rgb(46 49 55)' : '', color: mode === 'dark' ? 'white' : '' }}>
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container px-10 py-10 mx-auto">
         <div className="flex flex-wrap md:text-left text-center order-first">
           <div className="lg:w-1/3 md:w-1/2 w-full px-4">
             <h2 className="title-font font-bold text-gray-900 tracking-widest text-sm mb-3" style={{ color: mode === 'dark' ? 'white' : '' }}>MENU</h2>
@@ -60,25 +60,26 @@ export default function Footer({ mode }) {
                 <Link to={'/returportal'} className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>Returportal</Link>
               </li>
               <li>
-                <Link to={'/faq'} className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>FAQ</Link>
+                <Link to={'/termsofservice'} className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>Terms of service</Link>
               </li>
               <li>
-                <Link to={'/köpevillkor'} className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>Köpevillkor</Link>
+                <Link to={'/faq'} className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>FAQ</Link>
               </li>
+              
             </nav>
           </div>
 
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <p className='font-bold uppercase'>Nyhetsbrev</p>
+            <p className="title-font font-bold text-gray-900 tracking-widest text-sm mb-3 uppercase" >Nyhetsbrev</p>
             <p className='py-4'>Lorem ipsum dolor sit amet consectetur. Mi nibh venenatis in suscipit turpis enim cursus vulputate amet. Lobortis mi platea aliquam senectus tempus mauris neque.</p>
             <form onSubmit={handleSubmit}>
               <input type="email" placeholder='Enter email address' className='w-full p-2 mr-4 rounded-md mb-4' />
-              <button type="submit" className='p-2 mb-4'>Subscribe</button>
+              <button type="submit" className="w-full py-2 bg-gray-900 text-white font-bold rounded hover:bg-gray-800" >Subscribe</button>
             </form>
             <div className='flex justify-between sm:w-[300px] pt-4 text-2xl'>
               {
                 items.map((x, index) => (
-                  <a href={x.link} key={index} className='hover:text-gray cursor-pointer'>
+                  <a href={x.link} key={index} className='w-full py-2 hover:text-gray-900 cursor-pointer'>
                     <x.icon />
                   </a>
                 ))

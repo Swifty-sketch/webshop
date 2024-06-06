@@ -8,6 +8,7 @@ import About from "./pages/About";
 import ProductPage from "./components/ProductPage";
 import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
+import TermsOfService from "./pages/TermsOfService";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/products/:category" element={<Products />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/termsofservice" element={<TermsOfService />} />
           <Route path="/productpage" element={<ProductPage />} /> {/* Add this line */}
         </Routes>
       </div>
