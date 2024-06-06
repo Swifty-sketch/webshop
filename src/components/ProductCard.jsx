@@ -24,17 +24,17 @@ const ProductCard = ({ product, handleClick }) => {
   return (
     <Link
       to={{ pathname: '/productpage', state: { product } }}
-      className="max-w-[300px] mx-auto h-[400px] flex flex-col"
+      className="w-[300px] h-[300px] mx-auto flex flex-col"
     >
       <Card
-        className="h-[100%] flex flex-col"
+        className="h-full w-full flex flex-col"
         onClick={handleCardClick}
       >
-        <CardHeader shadow={false} floated={false} className="h-56 flex justify-center items-center">
+        <CardHeader shadow={false} floated={false} className="h-1/2 flex justify-center items-center">
           <img
             src={product.image}
             alt={product.title}
-            className="h-48 w-full object-cover rounded-t-md"
+            className="h-full w-full object-cover rounded-t-md"
           />
         </CardHeader>
         <CardBody className="p-4 flex-grow">

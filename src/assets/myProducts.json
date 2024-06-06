@@ -23,5 +23,185 @@
         "description": "Description of Product 2",
         "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/14de6943-8c87-4b9b-9585-80dea96a70d3/air-max-97-shoes-skcMPS.png",
         "category": "shoe"
+    },
+
+    {
+        "id": 2321,
+        "title": "Nike 300",
+        "price": 10007,
+        "description": "Description of Product 2",
+        "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/fdded470-0ac5-4bd7-b41b-1bb63e161438/custom-nike-air-force-1-mid-by-you-shoes.png",
+        "category": "shoe"
+    },
+
+    {
+        "id": 1,
+        "title": "Classic High-Top Sneakers",
+        "price": 75,
+        "description": "Timeless design, versatile for casual wear",
+        "image": "https://example.com/image1.png",
+        "category": "shoe"
+    },
+    {
+        "id": 2,
+        "title": "Performance Running Shoes",
+        "price": 120,
+        "description": "High-tech cushioning for runners",
+        "image": "https://example.com/image2.png",
+        "category": "shoe"
+    },
+    {
+        "id": 3,
+        "title": "Retro Basketball Sneakers",
+        "price": 130,
+        "description": "Iconic sneaker with a rich basketball heritage",
+        "image": "https://example.com/image3.png",
+        "category": "shoe"
+    },
+    {
+        "id": 4,
+        "title": "Skateboarding Shoes",
+        "price": 65,
+        "description": "Durable design with a grip for skateboarding",
+        "image": "https://example.com/image4.png",
+        "category": "shoe"
+    },
+    {
+        "id": 5,
+        "title": "Designer Fashion Sneakers",
+        "price": 950,
+        "description": "Chunky silhouette, luxury fashion statement",
+        "image": "https://example.com/image5.png",
+        "category": "shoe"
+    },
+    {
+        "id": 6,
+        "title": "Minimalist Casual Shoes",
+        "price": 50,
+        "description": "Simple, comfortable, and socially conscious",
+        "image": "https://example.com/image6.png",
+        "category": "shoe"
+    },
+    {
+        "id": 7,
+        "title": "Trail Running Shoes",
+        "price": 110,
+        "description": "Rugged build for off-road running",
+        "image": "https://example.com/image7.png",
+        "category": "shoe"
+    },
+    {
+        "id": 8,
+        "title": "Classic Leather Loafers",
+        "price": 600,
+        "description": "Elegant design for formal attire",
+        "image": "https://example.com/image8.png",
+        "category": "shoe"
+    },
+    {
+        "id": 9,
+        "title": "Innovative Athletic Sneakers",
+        "price": 190,
+        "description": "Futuristic look with advanced air cushioning",
+        "image": "https://example.com/image9.png",
+        "category": "shoe"
+    },
+    {
+        "id": 10,
+        "title": "Sustainable Eco-Friendly Shoes",
+        "price": 95,
+        "description": "Made with natural materials, environmentally friendly",
+        "image": "https://example.com/image10.png",
+        "category": "shoe"
+    },
+    {
+        "id": 11,
+        "title": "Luxury Leather Boots",
+        "price": 700,
+        "description": "High-quality leather with a timeless design",
+        "image": "https://example.com/image11.png",
+        "category": "shoe"
+    },
+    {
+        "id": 12,
+        "title": "Casual Slip-On Sneakers",
+        "price": 55,
+        "description": "Easy to wear, perfect for everyday casual looks",
+        "image": "https://example.com/image12.png",
+        "category": "shoe"
+    },
+    {
+        "id": 13,
+        "title": "High-Performance Basketball Shoes",
+        "price": 150,
+        "description": "Engineered for optimal performance on the court",
+        "image": "https://example.com/image13.png",
+        "category": "shoe"
+    },
+    {
+        "id": 14,
+        "title": "Designer High-Heels",
+        "price": 500,
+        "description": "Elegant design with luxurious details",
+        "image": "https://example.com/image14.png",
+        "category": "shoe"
+    },
+    {
+        "id": 15,
+        "title": "Comfortable Walking Shoes",
+        "price": 80,
+        "description": "Designed for all-day comfort and support",
+        "image": "https://example.com/image15.png",
+        "category": "shoe"
+    },
+    {
+        "id": 16,
+        "title": "Vintage Running Shoes",
+        "price": 100,
+        "description": "Classic style with modern comfort",
+        "image": "https://example.com/image16.png",
+        "category": "shoe"
+    },
+    {
+        "id": 17,
+        "title": "Outdoor Hiking Boots",
+        "price": 140,
+        "description": "Built for durability and protection on rugged terrains",
+        "image": "https://example.com/image17.png",
+        "category": "shoe"
+    },
+    {
+        "id": 18,
+        "title": "Fashionable Ankle Boots",
+        "price": 250,
+        "description": "Stylish design for a chic look",
+        "image": "https://example.com/image18.png",
+        "category": "shoe"
+    },
+    {
+        "id": 19,
+        "title": "Lightweight Running Shoes",
+        "price": 110,
+        "description": "Optimized for speed and comfort",
+        "image": "https://example.com/image19.png",
+        "category": "shoe"
+    },
+    {
+        "id": 20,
+        "title": "Classic Derby Shoes",
+        "price": 400,
+        "description": "Perfect blend of tradition and contemporary style",
+        "image": "https://example.com/image20.png",
+        "category": "shoe"
+    },
+
+    {
+        "id": 6969,
+        "title": "Product Shirt",
+        "price": 10007,
+        "description": "Description of Product 2",
+        "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/14de6943-8c87-4b9b-9585-80dea96a70d3/air-max-97-shoes-skcMPS.png",
+        "category": "clothing",
+        "subcategory": "shirt"
     }
 ]

@@ -51,7 +51,7 @@ function Navbar() {
             </li>
             <li className="mr-8">
               <Link
-                to="/products"
+                to="/clothing"
                 className="text-xl uppercase hover:border-b-4 hover:border-red-300"
               >
                 Clothing

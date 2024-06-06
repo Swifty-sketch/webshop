@@ -13,43 +13,36 @@ const Products = () => {
   const { category } = useParams();
 
   useEffect(() => {
-    const storedRandomProduct = JSON.parse(localStorage.getItem('randomProduct'));
-    const storedShoeProducts = JSON.parse(localStorage.getItem('shoeProducts'));
-
-    if (storedRandomProduct && storedShoeProducts) {
-      const allProducts = [storedRandomProduct, ...storedShoeProducts];
-      setProducts(allProducts);
-      filterProducts(category || 'all', allProducts);
+    const storedProducts = JSON.parse(localStorage.getItem('randomProducts'));
+    if (storedProducts && storedProducts.length) {
+      setProducts(storedProducts);
+      filterProducts(category || 'all', storedProducts);
     } else {
-      // Fetch one random product from the API
       fetch('https://fakestoreapi.com/products')
         .then(response => response.json())
         .then(data => {
-          const randomProduct = getRandomProduct(data);
-          localStorage.setItem('randomProduct', JSON.stringify(randomProduct));
-
-          // Fetch all products with category "shoe" from the JSON
-          const filteredProducts = myProducts.filter(product => product.category === 'shoe');
-          localStorage.setItem('shoeProducts', JSON.stringify(filteredProducts));
-
-          const allProducts = [randomProduct, ...filteredProducts];
-          setProducts(allProducts);
-          filterProducts(category || 'all', allProducts);
+          const fetchedProducts = data;
+          const allProducts = [...fetchedProducts, ...myProducts];
+          const shuffledProducts = shuffleArray(allProducts);
+          localStorage.setItem('randomProducts', JSON.stringify(shuffledProducts));
+          setProducts(shuffledProducts);
+          filterProducts(category || 'all', shuffledProducts);
         })
         .catch(error => {
-          console.error('Error fetching random product from API:', error);
-
-          // Fetch all products with category "shoe" from the JSON if API fails
-          const filteredProducts = myProducts.filter(product => product.category === 'shoe');
-          setProducts(filteredProducts);
-          filterProducts(category || 'all', filteredProducts);
+          console.error('Error fetching data from API:', error);
+          setProducts(myProducts);
+          filterProducts(category || 'all', myProducts);
         });
     }
   }, [category]);
 
-  const getRandomProduct = (array) => {
-    const randomIndex = Math.floor(Math.random() * array.length);
-    return array[randomIndex];
+  const shuffleArray = (array) => {
+    const shuffled = array.slice();
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
   };
 
   const handleClick = (product) => {
@@ -79,7 +72,7 @@ const Products = () => {
 
   return (
     <div className="container mx-auto py-8">
-      <h1 className="text-2xl font-bold mb-4 text-center">Shoes</h1>
+      <h1 className="text-2xl font-bold mb-4 text-center">Random Products</h1>
       <div className="flex justify-center mb-4">
         <button
           onClick={() => handleCategoryClick('all')}
