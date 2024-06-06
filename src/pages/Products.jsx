@@ -73,34 +73,10 @@ const Products = () => {
     setCurrentPage(1); // Reset to the first page
   };
 
-  const handleCategoryClick = (category) => {
-    navigate(`/products/${category}`);
-    filterProducts(category);
-  };
 
   return (
     <div className="container mx-auto py-8">
       <h1 className="text-2xl font-bold mb-4 text-center">Shoes</h1>
-      <div className="flex justify-center mb-4">
-        <button
-          onClick={() => handleCategoryClick('all')}
-          className="mx-2 px-4 py-2 border bg-white hover:bg-gray-100"
-        >
-          All
-        </button>
-        <button
-          onClick={() => handleCategoryClick('shoe')}
-          className="mx-2 px-4 py-2 border bg-white hover:bg-gray-100"
-        >
-          Shoes
-        </button>
-        <button
-          onClick={() => handleCategoryClick('shirt')}
-          className="mx-2 px-4 py-2 border bg-white hover:bg-gray-100"
-        >
-          Shirts
-        </button>
-      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         {/* Render all products except the last one */}
         {currentProducts.slice(0, lastProductIndex).map((product, index) => (
