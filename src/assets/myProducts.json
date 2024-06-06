@@ -1,108 +1,81 @@
 [{
-        "id": 31231,
-        "title": "Vans",
-        "price": 70,
-        "description": "Description of Product 1",
-        "image": "https://i8.amplience.net/i/jpl/jd_058161_a?qlt=92&w=600&h=425&v=1&fmt=auto",
-        "category": "shoe"
-    },
-
-    {
-        "id": 331,
-        "title": "Nike Runner 330",
-        "price": 110,
-        "description": "Description of Product 2",
-        "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/14de6943-8c87-4b9b-9585-80dea96a70d3/air-max-97-shoes-skcMPS.png",
-        "category": "shoe"
-    },
-
-    {
-        "id": 2321,
-        "title": "Nike 300",
-        "price": 10007,
-        "description": "Description of Product 2",
-        "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/fdded470-0ac5-4bd7-b41b-1bb63e161438/custom-nike-air-force-1-mid-by-you-shoes.png",
-        "category": "shoe"
-    },
-
-    {
         "id": 1,
-        "title": "Classic High-Top Sneakers",
-        "price": 75,
-        "description": "Timeless design, versatile for casual wear",
-        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217376856739901/image_12.png?ex=6662dc85&is=66618b05&hm=fd561fb3601d7b9d1090c211f6953a6dbc1683fd72f36b1d6c123bc8179b8cd1&",
+        "title": "Vans Street Surfers",
+        "price": 70,
+        "description": "Classic skateboarding shoes designed for the streets, with durable construction and timeless style.",
+        "image": "https://i8.amplience.net/i/jpl/jd_058161_a?qlt=92&w=600&h=425&v=1&fmt=auto",
         "category": "shoe"
     },
     {
         "id": 2,
-        "title": "Performance Running Shoes",
-        "price": 120,
-        "description": "High-tech cushioning for runners",
-        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217404086026280/image_21.png?ex=6662dc8b&is=66618b0b&hm=66a70c8f53f8cfbc0d884b400ddaecdc63a74e1545624647de6b5bd260f55bfc&",
+        "title": "Nike Air Runner 330",
+        "price": 110,
+        "description": "Experience the ultimate blend of style and performance with these sleek running shoes, featuring Nike's iconic Air technology.",
+        "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/14de6943-8c87-4b9b-9585-80dea96a70d3/air-max-97-shoes-skcMPS.png",
         "category": "shoe"
     },
     {
         "id": 3,
-        "title": "Retro Basketball Sneakers",
-        "price": 130,
-        "description": "Iconic sneaker with a rich basketball heritage",
-        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217404492742716/image_31.png?ex=6662dc8b&is=66618b0b&hm=7c92d2f22201c817b5b503a7998deb4e0d9206ebf01b582d626c28861e21d9dc&",
+        "title": "Nike Air Street 300",
+        "price": 10007,
+        "description": "Dominate the urban landscape with these bold Nike sneakers, boasting cutting-edge design and unparalleled comfort.",
+        "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/fdded470-0ac5-4bd7-b41b-1bb63e161438/custom-nike-air-force-1-mid-by-you-shoes.png",
         "category": "shoe"
     },
     {
         "id": 4,
-        "title": "Skateboarding Shoes",
-        "price": 65,
-        "description": "Durable design with a grip for skateboarding",
-        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217404841000993/image_51.png?ex=6662dc8c&is=66618b0c&hm=11f1a4fb5b7981a21b1966483a9674ebeee8eb5615d963875e34edce0de7c903&",
+        "title": "Urban High-Tops",
+        "price": 75,
+        "description": "Elevate your street style with these classic high-top sneakers, perfect for casual outings and urban adventures.",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217376856739901/image_12.png?ex=6662dc85&is=66618b05&hm=fd561fb3601d7b9d1090c211f6953a6dbc1683fd72f36b1d6c123bc8179b8cd1&",
         "category": "shoe"
     },
     {
         "id": 5,
-        "title": "Designer Fashion Sneakers",
-        "price": 950,
-        "description": "Chunky silhouette, luxury fashion statement",
-        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217405147054121/image_71.png?ex=6662dc8c&is=66618b0c&hm=f193ac98544e6dd865579ba6456fea58568571d062954d41ae0e59ae4910dbce&",
+        "title": "Performance Tech Runners",
+        "price": 120,
+        "description": "Engineered for runners seeking maximum performance, these high-tech shoes offer unparalleled cushioning and support.",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217404086026280/image_21.png?ex=6662dc8b&is=66618b0b&hm=66a70c8f53f8cfbc0d884b400ddaecdc63a74e1545624647de6b5bd260f55bfc&",
         "category": "shoe"
     },
     {
         "id": 6,
-        "title": "Minimalist Casual Shoes",
-        "price": 50,
-        "description": "Simple, comfortable, and socially conscious",
-        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217439720706068/image_81.png?ex=6662dc94&is=66618b14&hm=dcb40c28726c99e04afe037b8a783b8c86249c781cf81ad106b48d17998f8155&",
+        "title": "Retro Court Kings",
+        "price": 130,
+        "description": "Pay homage to basketball's golden era with these retro sneakers, blending vintage style with modern comfort for an unbeatable on-court look.",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217404492742716/image_31.png?ex=6662dc8b&is=66618b0b&hm=7c92d2f22201c817b5b503a7998deb4e0d9206ebf01b582d626c28861e21d9dc&",
         "category": "shoe"
     },
     {
         "id": 7,
-        "title": "Trail Running Shoes",
-        "price": 110,
-        "description": "Rugged build for off-road running",
-        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217440010375320/image_91.png?ex=6662dc94&is=66618b14&hm=0c1fb6ca169276c4593de11237471a04046d866ef748b7304fe27ac99579fb55&",
+        "title": "Street Skater Essentials",
+        "price": 65,
+        "description": "Conquer the concrete jungle in style with these skateboarding shoes, featuring a durable design and superior grip for maximum performance.",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217404841000993/image_51.png?ex=6662dc8c&is=66618b0c&hm=11f1a4fb5b7981a21b1966483a9674ebeee8eb5615d963875e34edce0de7c903&",
         "category": "shoe"
     },
     {
         "id": 8,
-        "title": "Classic Leather Loafers",
-        "price": 600,
-        "description": "Elegant design for formal attire",
-        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217440010375320/image_91.png?ex=6662dc94&is=66618b14&hm=0c1fb6ca169276c4593de11237471a04046d866ef748b7304fe27ac99579fb55&",
+        "title": "Luxury Street Runners",
+        "price": 950,
+        "description": "Make a bold fashion statement with these designer sneakers, boasting a chunky silhouette and luxurious materials for an upscale urban look.",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217405147054121/image_71.png?ex=6662dc8c&is=66618b0c&hm=f193ac98544e6dd865579ba6456fea58568571d062954d41ae0e59ae4910dbce&",
         "category": "shoe"
     },
     {
         "id": 9,
-        "title": "Innovative Athletic Sneakers",
-        "price": 190,
-        "description": "Futuristic look with advanced air cushioning",
-        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217440253509632/image_101.png?ex=6662dc94&is=66618b14&hm=e1cefe627fbd7137204f01cdee28ca1a37e930f22d13bc105d2b75589e373b05&",
+        "title": "City Minimalists",
+        "price": 50,
+        "description": "Embrace simplicity with these minimalist casual shoes, crafted for comfort and conscientious style, perfect for urban living.",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217439720706068/image_81.png?ex=6662dc94&is=66618b14&hm=dcb40c28726c99e04afe037b8a783b8c86249c781cf81ad106b48d17998f8155&",
         "category": "shoe"
     },
     {
         "id": 10,
-        "title": "Sustainable Eco-Friendly Shoes",
-        "price": 95,
-        "description": "Made with natural materials, environmentally friendly",
-        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217440475680798/image_111.png?ex=6662dc94&is=66618b14&hm=2a6cd7fae0718ef1d521a4557f21b434955d9a6b4553a261990be1ad60429c64&",
+        "title": "Street Trail Blazers",
+        "price": 110,
+        "description": "Conquer any terrain with confidence in these rugged trail running shoes, engineered for off-road performance and urban exploration.",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217440010375320/image_91.png?ex=6662dc94&is=66618b14&hm=0c1fb6ca169276c4593de11237471a04046d866ef748b7304fe27ac99579fb55&",
         "category": "shoe"
     },
     {
@@ -187,12 +160,132 @@
     },
 
     {
-        "id": 6969,
-        "title": "Product Shirt",
-        "price": 10007,
+        "id": 21,
+        "title": "Jacket 1",
+        "price": 2000,
         "description": "Description of Product 2",
-        "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/14de6943-8c87-4b9b-9585-80dea96a70d3/air-max-97-shoes-skcMPS.png",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248222531958345748/3333.png?ex=6662e152&is=66618fd2&hm=25052bb934008327e230209461811ee3526116553c1bc63553f73b2b6545a7f1&",
+        "category": "clothing",
+        "subcategory": "jacket"
+    },
+
+    {
+        "id": 21,
+        "title": "Jacket 1",
+        "price": 2000,
+        "description": "Description of Product 2",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248222531958345748/3333.png?ex=6662e152&is=66618fd2&hm=25052bb934008327e230209461811ee3526116553c1bc63553f73b2b6545a7f1&",
+        "category": "clothing",
+        "subcategory": "jacket"
+    },
+
+    {
+        "id": 22,
+        "title": "Hoodie 1",
+        "price": 2000,
+        "description": "Description of Product 2",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248222532633624647/clothes1.png?ex=6662e152&is=66618fd2&hm=26d8bdd458f5e48e0beedf3bf61dc874fa8e80945e18426488ec65740085c193&",
+        "category": "clothing",
+        "subcategory": "hoodie"
+    },
+
+    {
+        "id": 23,
+        "title": "hoodie 2",
+        "price": 2000,
+        "description": "Description of Product 2",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248222532901933138/clothes4.png?ex=6662e152&is=66618fd2&hm=7026a549b535db7703b1f3dbe7039f37c0b46df61bedcfae34ee3b83e9f80a1b&",
+        "category": "clothing",
+        "subcategory": "hoodie"
+    },
+
+    {
+        "id": 24,
+        "title": "Shirt 1",
+        "price": 2000,
+        "description": "Description of Product 2",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248222533208248320/clothes101.png?ex=6662e152&is=66618fd2&hm=7aad718057511659cccb6581d7ca6f93bac2ab7ff31285ae9ecaa00ccbe8bad6&",
         "category": "clothing",
         "subcategory": "shirt"
+    },
+
+    {
+        "id": 25,
+        "title": "Jacket 1",
+        "price": 2000,
+        "description": "Description of Product 2",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248222531958345748/3333.png?ex=6662e152&is=66618fd2&hm=25052bb934008327e230209461811ee3526116553c1bc63553f73b2b6545a7f1&",
+        "category": "clothing",
+        "subcategory": "jacket"
+    },
+
+    {
+        "id": 26,
+        "title": "Hoodie 3",
+        "price": 2000,
+        "description": "Description of Product 2",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248222533443125248/clothes522.png?ex=6662e152&is=66618fd2&hm=8a568198774c5644475d339a17034e0dc53812b759b897faf21b7ea692f7717a&",
+        "category": "clothing",
+        "subcategory": "hoodie"
+    },
+
+    {
+        "id": 27,
+        "title": "Jacket 2",
+        "price": 2000,
+        "description": "Description of Product 2",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248222531958345748/3333.png?ex=6662e152&is=66618fd2&hm=25052bb934008327e230209461811ee3526116553c1bc63553f73b2b6545a7f1&",
+        "category": "clothing",
+        "subcategory": "jacket"
+    },
+
+    {
+        "id": 28,
+        "title": "shurt 3",
+        "price": 2000,
+        "description": "Description of Product 2",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248222543928623224/clothes6.png?ex=6662e155&is=66618fd5&hm=ef123ad926e5f0d4780e9e7a438aab9d417b859be8de47fb7236e110eaf04319&",
+        "category": "clothing",
+        "subcategory": "shirt"
+    },
+
+    {
+        "id": 29,
+        "title": "Shirt 4",
+        "price": 2000,
+        "description": "Description of Product 2",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248222544289595394/clothes7.png?ex=6662e155&is=66618fd5&hm=38f3485a4d7f5f9023038966f7616751bfd1d79fc66f32c653382eeb12801051&",
+        "category": "clothing",
+        "subcategory": "shirt"
+    },
+
+    {
+        "id": 30,
+        "title": "Shirt 5",
+        "price": 2000,
+        "description": "Description of Product 2",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248222544666951761/clothes8.png?ex=6662e155&is=66618fd5&hm=da225ee5b9decf99509d2be0350b064a592d7fbaf05b24609c8dac55427b70ab&",
+        "category": "clothing",
+        "subcategory": "shirt"
+    },
+
+    {
+        "id": 31,
+        "title": "Shirt 6",
+        "price": 2000,
+        "description": "Description of Product 2",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248222545002369044/clothes9.png?ex=6662e155&is=66618fd5&hm=34f8b0c2a4d5de8940f34e24348eef69b61fc10e4b43a70c36e85ca138d5b19d&",
+        "category": "clothing",
+        "subcategory": "shirt"
+    },
+
+    {
+        "id": 32,
+        "title": "Hoodie 3",
+        "price": 2000,
+        "description": "Description of Product 2",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248222545329655930/clothes62.png?ex=6662e155&is=66618fd5&hm=5baf9e0ee11b3f8c362a19df91eacf1a3e22e800c595c7d1276d36fb3160977e&",
+        "category": "clothing",
+        "subcategory": "hoodie"
     }
 ]

@@ -102,7 +102,7 @@ const ProductPage = () => {
               </p>
               {/* Product Price */}
               <span className="text-xl text-red-500 font-semibold sm:text-2xl">
-                {`$${product.price}`}
+                {`${product.price} SEK`}
               </span>
               {/* Size Buttons */}
               {renderSizeButtons()}
