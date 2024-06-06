@@ -32,7 +32,7 @@ const Products = () => {
           const filteredProducts = myProducts.filter(product => product.category === 'shoe');
           localStorage.setItem('shoeProducts', JSON.stringify(filteredProducts));
 
-          const allProducts = [randomProduct, ...filteredProducts];
+          const allProducts = [...filteredProducts, randomProduct]; // Place API product last
           setProducts(allProducts);
           filterProducts(category || 'all', allProducts);
         })
@@ -59,6 +59,7 @@ const Products = () => {
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
+  const lastProductIndex = currentProducts.length - 1;
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -101,13 +102,22 @@ const Products = () => {
         </button>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-        {currentProducts.map((product, index) => (
+        {/* Render all products except the last one */}
+        {currentProducts.slice(0, lastProductIndex).map((product, index) => (
           <ProductCard
             key={index}
             product={product}
             handleClick={handleClick}
           />
         ))}
+        {/* Render the last product */}
+        {currentProducts[lastProductIndex] && (
+          <ProductCard
+            key={lastProductIndex}
+            product={currentProducts[lastProductIndex]}
+            handleClick={handleClick}
+          />
+        )}
       </div>
       <div className="flex justify-center mt-4">
         {Array.from({ length: Math.ceil(filteredProducts.length / productsPerPage) }).map((_, index) => (
