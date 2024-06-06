@@ -171,89 +171,81 @@
 
     {
         "id": 21,
-        "title": "Jacket 1",
-        "price": 2000,
-        "description": "Description of Product 2",
+        "title": "Ultimate Biker Jacket",
+        "price": 2500,
+        "description": "Embrace the road with our Ultimate Biker Jacket. Crafted for durability and style, this jacket is your perfect companion for any adventure.",
         "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248222531958345748/3333.png?ex=6662e152&is=66618fd2&hm=25052bb934008327e230209461811ee3526116553c1bc63553f73b2b6545a7f1&",
         "category": "clothing",
         "subcategory": "jacket"
     },
-
     {
         "id": 22,
-        "title": "Hoodie 1",
+        "title": "Cosmic Comfort Hoodie",
         "price": 2000,
-        "description": "Description of Product 2",
+        "description": "Wrap yourself in comfort with our Cosmic Comfort Hoodie. Soft, warm, and stylish, it's the perfect choice for cozy nights or outdoor adventures.",
         "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248222532633624647/clothes1.png?ex=6662e152&is=66618fd2&hm=26d8bdd458f5e48e0beedf3bf61dc874fa8e80945e18426488ec65740085c193&",
         "category": "clothing",
         "subcategory": "hoodie"
     },
-
     {
         "id": 23,
-        "title": "hoodie 2",
+        "title": "Urban Edge Hoodie",
         "price": 2000,
-        "description": "Description of Product 2",
+        "description": "Stay ahead of the fashion curve with our Urban Edge Hoodie. Combining style and functionality, it's the perfect addition to your streetwear collection.",
         "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248222532901933138/clothes4.png?ex=6662e152&is=66618fd2&hm=7026a549b535db7703b1f3dbe7039f37c0b46df61bedcfae34ee3b83e9f80a1b&",
         "category": "clothing",
         "subcategory": "hoodie"
     },
-
     {
         "id": 24,
-        "title": "Shirt 1",
+        "title": "Elegant Classic Shirt",
         "price": 2000,
-        "description": "Description of Product 2",
+        "description": "Experience elegance with our Elegant Classic Shirt. Tailored for style and comfort, it's a timeless addition to any wardrobe.",
         "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248222533208248320/clothes101.png?ex=6662e152&is=66618fd2&hm=7aad718057511659cccb6581d7ca6f93bac2ab7ff31285ae9ecaa00ccbe8bad6&",
         "category": "clothing",
         "subcategory": "shirt"
     },
-
     {
         "id": 25,
-        "title": "Jacket 1",
+        "title": "Urban Explorer Jacket",
         "price": 2000,
-        "description": "Description of Product 2",
+        "description": "Embark on urban adventures with our Urban Explorer Jacket. Designed for style and functionality, it's your perfect companion in the city.",
         "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248222531958345748/3333.png?ex=6662e152&is=66618fd2&hm=25052bb934008327e230209461811ee3526116553c1bc63553f73b2b6545a7f1&",
         "category": "clothing",
         "subcategory": "jacket"
     },
-
     {
         "id": 26,
-        "title": "Hoodie 3",
+        "title": "Fusion Tech Hoodie",
         "price": 2000,
-        "description": "Description of Product 2",
+        "description": "Fuse style with technology with our Fusion Tech Hoodie. Featuring innovative design and comfort, it's perfect for modern adventurers.",
         "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248222533443125248/clothes522.png?ex=6662e152&is=66618fd2&hm=8a568198774c5644475d339a17034e0dc53812b759b897faf21b7ea692f7717a&",
         "category": "clothing",
         "subcategory": "hoodie"
     },
-
     {
         "id": 27,
-        "title": "Jacket 2",
+        "title": "Sleek Urban Jacket",
         "price": 2000,
-        "description": "Description of Product 2",
+        "description": "Stay sleek and stylish in the city with our Sleek Urban Jacket. Designed for urban explorers, it combines fashion with functionality.",
         "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248222531958345748/3333.png?ex=6662e152&is=66618fd2&hm=25052bb934008327e230209461811ee3526116553c1bc63553f73b2b6545a7f1&",
         "category": "clothing",
         "subcategory": "jacket"
     },
-
     {
         "id": 28,
-        "title": "shurt 3",
+        "title": "Classic Casual Shirt",
         "price": 2000,
-        "description": "Description of Product 2",
+        "description": "Achieve classic casual style with our Classic Casual Shirt. Versatile and comfortable, it's perfect for everyday wear.",
         "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248222543928623224/clothes6.png?ex=6662e155&is=66618fd5&hm=ef123ad926e5f0d4780e9e7a438aab9d417b859be8de47fb7236e110eaf04319&",
         "category": "clothing",
         "subcategory": "shirt"
     },
-
     {
         "id": 29,
-        "title": "Shirt 4",
+        "title": "Modern Chic Shirt",
         "price": 2000,
-        "description": "Description of Product 2",
+        "description": "Elevate your style with our Modern Chic Shirt. Featuring contemporary design and comfort, it's the perfect choice for fashion-forward individuals.",
         "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248222544289595394/clothes7.png?ex=6662e155&is=66618fd5&hm=38f3485a4d7f5f9023038966f7616751bfd1d79fc66f32c653382eeb12801051&",
         "category": "clothing",
         "subcategory": "shirt"
