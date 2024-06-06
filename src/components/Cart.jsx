@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
 
 function Cart({ isCartOpen, toggleCart }) {
   const [cartItems, setCartItems] = useState([]);
@@ -62,9 +64,10 @@ function Cart({ isCartOpen, toggleCart }) {
           </div>
         ))}
         <p className="p-4 border-b">Total: {subtotal}$</p>
-        <button className="bg-black text-white py-2 px-4 m-4 rounded">
-          Checkout
-        </button>
+        <Link to={{ pathname: "/checkout", state: { cartItems } }} className="bg-black text-white py-2 px-4 m-4 rounded">
+  Checkout
+</Link>
+
       </div>
     </div>
   );

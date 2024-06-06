@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
 import Clothing from "./pages/Clothing"
 import TermsOfService from "./pages/TermsOfService";
+import CheckoutForm from "./pages/Checkout";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/clothing" element={<Clothing />} />
+          <Route path="/checkout" element={<CheckoutForm />} />
           <Route path="/termsofservice" element={<TermsOfService />} />
           <Route path="/productpage" element={<ProductPage />} /> {/* Add this line */}
         </Routes>
