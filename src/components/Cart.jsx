@@ -1,9 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-
 
 function Cart({ isCartOpen, toggleCart }) {
   const [cartItems, setCartItems] = useState([]);
+  const cartRef = useRef();
+
+  // Close cart when clicking outside
+  useEffect(() => {
+    if (isCartOpen) {
+      const handleClickOutside = (event) => {
+        if (cartRef.current && !cartRef.current.contains(event.target)) {
+          toggleCart();
+        }
+      };
+
+      document.addEventListener('mousedown', handleClickOutside);
+
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }
+  }, [isCartOpen, toggleCart, cartRef]);
 
   // Retrieve cart items from localStorage and combine identical products
   useEffect(() => {
@@ -31,6 +48,7 @@ function Cart({ isCartOpen, toggleCart }) {
 
   return (
     <div
+      ref={cartRef}
       className={`fixed top-0 right-0 w-80 h-full bg-white shadow-lg transform transition-transform duration-300 ${
         isCartOpen ? 'translate-x-0' : 'translate-x-full'
       }`}
@@ -64,10 +82,13 @@ function Cart({ isCartOpen, toggleCart }) {
           </div>
         ))}
         <p className="p-4 border-b">Total: {subtotal}$</p>
-        <Link to={{ pathname: "/checkout", state: { cartItems } }} className="bg-black text-white py-2 px-4 m-4 rounded">
-  Checkout
-</Link>
-
+        <Link
+          to={{ pathname: "/checkout", state: { cartItems } }}
+          className="bg-black text-white py-2 px-4 m-4 rounded"
+          onClick={toggleCart} // Add onClick event handler
+        >
+          Checkout
+        </Link>
       </div>
     </div>
   );

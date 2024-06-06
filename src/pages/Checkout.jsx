@@ -84,7 +84,7 @@ export default function CheckoutForm() {
               )}
             </div>
             <Typography variant="h5" color="white">
-              Material Tailwind PRO
+              Checkout
             </Typography>
           </CardHeader>
           <CardBody>
