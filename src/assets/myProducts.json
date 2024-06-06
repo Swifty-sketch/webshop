@@ -17,15 +17,6 @@
     },
 
     {
-        "id": 231,
-        "title": "Product 3",
-        "price": 10007,
-        "description": "Description of Product 2",
-        "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/14de6943-8c87-4b9b-9585-80dea96a70d3/air-max-97-shoes-skcMPS.png",
-        "category": "shoe"
-    },
-
-    {
         "id": 2321,
         "title": "Nike 300",
         "price": 10007,
@@ -39,7 +30,7 @@
         "title": "Classic High-Top Sneakers",
         "price": 75,
         "description": "Timeless design, versatile for casual wear",
-        "image": "https://example.com/image1.png",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217376856739901/image_12.png?ex=6662dc85&is=66618b05&hm=fd561fb3601d7b9d1090c211f6953a6dbc1683fd72f36b1d6c123bc8179b8cd1&",
         "category": "shoe"
     },
     {
@@ -47,7 +38,7 @@
         "title": "Performance Running Shoes",
         "price": 120,
         "description": "High-tech cushioning for runners",
-        "image": "https://example.com/image2.png",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217404086026280/image_21.png?ex=6662dc8b&is=66618b0b&hm=66a70c8f53f8cfbc0d884b400ddaecdc63a74e1545624647de6b5bd260f55bfc&",
         "category": "shoe"
     },
     {
@@ -55,7 +46,7 @@
         "title": "Retro Basketball Sneakers",
         "price": 130,
         "description": "Iconic sneaker with a rich basketball heritage",
-        "image": "https://example.com/image3.png",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217404492742716/image_31.png?ex=6662dc8b&is=66618b0b&hm=7c92d2f22201c817b5b503a7998deb4e0d9206ebf01b582d626c28861e21d9dc&",
         "category": "shoe"
     },
     {
@@ -63,7 +54,7 @@
         "title": "Skateboarding Shoes",
         "price": 65,
         "description": "Durable design with a grip for skateboarding",
-        "image": "https://example.com/image4.png",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217404841000993/image_51.png?ex=6662dc8c&is=66618b0c&hm=11f1a4fb5b7981a21b1966483a9674ebeee8eb5615d963875e34edce0de7c903&",
         "category": "shoe"
     },
     {
@@ -71,7 +62,7 @@
         "title": "Designer Fashion Sneakers",
         "price": 950,
         "description": "Chunky silhouette, luxury fashion statement",
-        "image": "https://example.com/image5.png",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217405147054121/image_71.png?ex=6662dc8c&is=66618b0c&hm=f193ac98544e6dd865579ba6456fea58568571d062954d41ae0e59ae4910dbce&",
         "category": "shoe"
     },
     {
@@ -79,7 +70,7 @@
         "title": "Minimalist Casual Shoes",
         "price": 50,
         "description": "Simple, comfortable, and socially conscious",
-        "image": "https://example.com/image6.png",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217439720706068/image_81.png?ex=6662dc94&is=66618b14&hm=dcb40c28726c99e04afe037b8a783b8c86249c781cf81ad106b48d17998f8155&",
         "category": "shoe"
     },
     {
@@ -87,7 +78,7 @@
         "title": "Trail Running Shoes",
         "price": 110,
         "description": "Rugged build for off-road running",
-        "image": "https://example.com/image7.png",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217440010375320/image_91.png?ex=6662dc94&is=66618b14&hm=0c1fb6ca169276c4593de11237471a04046d866ef748b7304fe27ac99579fb55&",
         "category": "shoe"
     },
     {
@@ -95,7 +86,7 @@
         "title": "Classic Leather Loafers",
         "price": 600,
         "description": "Elegant design for formal attire",
-        "image": "https://example.com/image8.png",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217440010375320/image_91.png?ex=6662dc94&is=66618b14&hm=0c1fb6ca169276c4593de11237471a04046d866ef748b7304fe27ac99579fb55&",
         "category": "shoe"
     },
     {
@@ -103,7 +94,7 @@
         "title": "Innovative Athletic Sneakers",
         "price": 190,
         "description": "Futuristic look with advanced air cushioning",
-        "image": "https://example.com/image9.png",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217440253509632/image_101.png?ex=6662dc94&is=66618b14&hm=e1cefe627fbd7137204f01cdee28ca1a37e930f22d13bc105d2b75589e373b05&",
         "category": "shoe"
     },
     {
@@ -111,7 +102,7 @@
         "title": "Sustainable Eco-Friendly Shoes",
         "price": 95,
         "description": "Made with natural materials, environmentally friendly",
-        "image": "https://example.com/image10.png",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217440475680798/image_111.png?ex=6662dc94&is=66618b14&hm=2a6cd7fae0718ef1d521a4557f21b434955d9a6b4553a261990be1ad60429c64&",
         "category": "shoe"
     },
     {
@@ -119,7 +110,7 @@
         "title": "Luxury Leather Boots",
         "price": 700,
         "description": "High-quality leather with a timeless design",
-        "image": "https://example.com/image11.png",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217440689852446/image_121.png?ex=6662dc94&is=66618b14&hm=fd1d27c46ce1e1028a18e9657e364ebfdb8f6d0b78591b2f8e1ac643e9324f77&",
         "category": "shoe"
     },
     {
@@ -127,7 +118,7 @@
         "title": "Casual Slip-On Sneakers",
         "price": 55,
         "description": "Easy to wear, perfect for everyday casual looks",
-        "image": "https://example.com/image12.png",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217446687572049/image_7133.png?ex=6662dc96&is=66618b16&hm=19d0c1d8353a281cde8e3c95aa492ed1b2833c9edb947c9c8ce78314b9cf8465&",
         "category": "shoe"
     },
     {
@@ -135,7 +126,7 @@
         "title": "High-Performance Basketball Shoes",
         "price": 150,
         "description": "Engineered for optimal performance on the court",
-        "image": "https://example.com/image13.png",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217376856739901/image_12.png?ex=6662dc85&is=66618b05&hm=fd561fb3601d7b9d1090c211f6953a6dbc1683fd72f36b1d6c123bc8179b8cd1&",
         "category": "shoe"
     },
     {
@@ -143,7 +134,7 @@
         "title": "Designer High-Heels",
         "price": 500,
         "description": "Elegant design with luxurious details",
-        "image": "https://example.com/image14.png",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217404086026280/image_21.png?ex=6662dc8b&is=66618b0b&hm=66a70c8f53f8cfbc0d884b400ddaecdc63a74e1545624647de6b5bd260f55bfc&",
         "category": "shoe"
     },
     {
@@ -151,7 +142,7 @@
         "title": "Comfortable Walking Shoes",
         "price": 80,
         "description": "Designed for all-day comfort and support",
-        "image": "https://example.com/image15.png",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217404492742716/image_31.png?ex=6662dc8b&is=66618b0b&hm=7c92d2f22201c817b5b503a7998deb4e0d9206ebf01b582d626c28861e21d9dc&",
         "category": "shoe"
     },
     {
@@ -159,7 +150,7 @@
         "title": "Vintage Running Shoes",
         "price": 100,
         "description": "Classic style with modern comfort",
-        "image": "https://example.com/image16.png",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217404841000993/image_51.png?ex=6662dc8c&is=66618b0c&hm=11f1a4fb5b7981a21b1966483a9674ebeee8eb5615d963875e34edce0de7c903&",
         "category": "shoe"
     },
     {
@@ -167,7 +158,7 @@
         "title": "Outdoor Hiking Boots",
         "price": 140,
         "description": "Built for durability and protection on rugged terrains",
-        "image": "https://example.com/image17.png",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217405147054121/image_71.png?ex=6662dc8c&is=66618b0c&hm=f193ac98544e6dd865579ba6456fea58568571d062954d41ae0e59ae4910dbce&",
         "category": "shoe"
     },
     {
@@ -175,7 +166,7 @@
         "title": "Fashionable Ankle Boots",
         "price": 250,
         "description": "Stylish design for a chic look",
-        "image": "https://example.com/image18.png",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217439720706068/image_81.png?ex=6662dc94&is=66618b14&hm=dcb40c28726c99e04afe037b8a783b8c86249c781cf81ad106b48d17998f8155&",
         "category": "shoe"
     },
     {
@@ -183,7 +174,7 @@
         "title": "Lightweight Running Shoes",
         "price": 110,
         "description": "Optimized for speed and comfort",
-        "image": "https://example.com/image19.png",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217440010375320/image_91.png?ex=6662dc94&is=66618b14&hm=0c1fb6ca169276c4593de11237471a04046d866ef748b7304fe27ac99579fb55&",
         "category": "shoe"
     },
     {
@@ -191,7 +182,7 @@
         "title": "Classic Derby Shoes",
         "price": 400,
         "description": "Perfect blend of tradition and contemporary style",
-        "image": "https://example.com/image20.png",
+        "image": "https://cdn.discordapp.com/attachments/600352759006625823/1248217440253509632/image_101.png?ex=6662dc94&is=66618b14&hm=e1cefe627fbd7137204f01cdee28ca1a37e930f22d13bc105d2b75589e373b05&",
         "category": "shoe"
     },
 
