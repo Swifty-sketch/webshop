@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import Clothing from "./pages/Clothing"
 import TermsOfService from "./pages/TermsOfService";
 import CheckoutForm from "./pages/Checkout";
+import CheckoutEnd from "./pages/CheckoutEnd";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/clothing" element={<Clothing />} />
           <Route path="/checkout" element={<CheckoutForm />} />
+          <Route path="/checkoutend" element={<CheckoutEnd />} />
           <Route path="/termsofservice" element={<TermsOfService />} />
           <Route path="/productpage" element={<ProductPage />} /> {/* Add this line */}
         </Routes>
