@@ -41,30 +41,136 @@ export default function CheckoutForm() {
   const cartItems = JSON.parse(localStorage.getItem("cartStorage")) || [];
 
   return (
-    <div className="flex">
-      <div className="w-1/2">
-        {/* Display cart items */}
-        {cartItems.map((item, index) => (
-          <div key={index} className="flex items-center p-4 border-t border-b">
-            <img src={item.image} alt={item.title} className="w-16 h-16 mr-4" />
-            <div>
-              <p className="font-semibold">{item.title}</p>
-              <p>Price: {item.price} $</p>
-              <p>Size: {item.size}</p>
-              <p>
-                Quantity:
-                <input
-                  type="number"
-                  value={item.quantity}
-                  readOnly
-                  className="border border-gray-300 text-sm font-semibold w-12 ml-2"
-                />
-              </p>
+    <div className="flex justify-center">
+      <div className="w-1/2 flex flex-col items-center">
+        {/* Scrollable container for cart items */}
+        <div className="w-full max-h-48 overflow-y-auto">
+          {cartItems.map((item, index) => (
+            <div key={index} className="flex items-center p-4 border-t border-b w-full">
+              <img src={item.image} alt={item.title} className="w-16 h-16 mr-4" />
+              <div className="flex flex-col items-center">
+                <p className="font-semibold">{item.title}</p>
+                <p>Price: {item.price} $</p>
+                <p>Size: {item.size}</p>
+                <p>
+                  Quantity:
+                  <input
+                    type="number"
+                    value={item.quantity}
+                    readOnly
+                    className="border border-gray-300 text-sm font-semibold w-12 ml-2 text-center"
+                  />
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        {/* Billing Form */}
+        <div className="mt-8 w-full flex flex-col items-center">
+          <Typography variant="h6" className="mb-4">
+            Billing Details
+          </Typography>
+          <form className="flex flex-col gap-4 w-3/4">
+            <div>
+              <Typography
+                variant="small"
+                color="blue-gray"
+                className="mb-2 font-medium"
+              >
+                Name
+              </Typography>
+              <Input
+                placeholder="Full Name"
+                className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+                labelProps={{
+                  className: "before:content-none after:content-none",
+                }}
+              />
+            </div>
+            <div>
+              <Typography
+                variant="small"
+                color="blue-gray"
+                className="mb-2 font-medium"
+              >
+                Address
+              </Typography>
+              <Input
+                placeholder="Street Address"
+                className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+                labelProps={{
+                  className: "before:content-none after:content-none",
+                }}
+              />
+            </div>
+            <div>
+              <Typography
+                variant="small"
+                color="blue-gray"
+                className="mb-2 font-medium"
+              >
+                City
+              </Typography>
+              <Input
+                placeholder="City"
+                className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+                labelProps={{
+                  className: "before:content-none after:content-none",
+                }}
+              />
+            </div>
+            <div>
+              <Typography
+                variant="small"
+                color="blue-gray"
+                className="mb-2 font-medium"
+              >
+                Country
+              </Typography>
+              <Select
+                placeholder="Country"
+                className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+                labelProps={{
+                  className: "before:content-none after:content-none",
+                }}
+                menuProps={{ className: "h-48" }}
+              >
+                {countries.map(({ name, flags }) => (
+                  <Option key={name} value={name}>
+                    <div className="flex items-center gap-x-2">
+                      <img
+                        src={flags.svg}
+                        alt={name}
+                        className="h-4 w-4 rounded-full object-cover"
+                      />
+                      {name}
+                    </div>
+                  </Option>
+                ))}
+              </Select>
+            </div>
+            <div>
+              <Typography
+                variant="small"
+                color="blue-gray"
+                className="mb-2 font-medium"
+              >
+                Postal Code
+              </Typography>
+              <Input
+                placeholder="Postal Code"
+                className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+                labelProps={{
+                  className: "before:content-none after:content-none",
+                }}
+              />
+            </div>
+          </form>
+        </div>
       </div>
-      <div className="w-1/2">
+
+      <div className="w-1/2 flex justify-center">
         <Card className="w-full max-w-[24rem]">
           <CardHeader
             color="gray"
@@ -124,7 +230,7 @@ export default function CheckoutForm() {
                       <Input
                         type="email"
                         placeholder="name@mail.com"
-                        className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+                        className="!border-t-blue-gray-200 focus:!border-t-gray-900"
                         labelProps={{
                           className: "before:content-none after:content-none",
                         }}
@@ -148,7 +254,7 @@ export default function CheckoutForm() {
                           <CreditCardIcon className="absolute left-0 h-4 w-4 text-blue-gray-300" />
                         }
                         placeholder="0000 0000 0000 0000"
-                        className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+                        className="!border-t-blue-gray-200 focus:!border-t-gray-900"
                         labelProps={{
                           className: "before:content-none after:content-none",
                         }}
@@ -170,7 +276,7 @@ export default function CheckoutForm() {
                             }
                             containerProps={{ className: "min-w-[72px]" }}
                             placeholder="00/00"
-                            className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+                            className="!border-t-blue-gray-200 focus:!border-t-gray-900"
                             labelProps={{
                               className:
                                 "before:content-none after:content-none",
@@ -187,9 +293,8 @@ export default function CheckoutForm() {
                           </Typography>
                           <Input
                             maxLength={4}
-                            containerProps={{ className: "min-w-[72px]" }}
-                            placeholder="000"
-                            className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+                            placeholder="123"
+                            className="!border-t-blue-gray-200 focus:!border-t-gray-900"
                             labelProps={{
                               className:
                                 "before:content-none after:content-none",
@@ -197,121 +302,35 @@ export default function CheckoutForm() {
                           />
                         </div>
                       </div>
+                    </div>
+
+                    <div className="-ml-2.5">
                       <Typography
                         variant="small"
-                        color="blue-gray"
-                        className="mb-2 font-medium"
+                        color="gray"
+                        className="flex items-center gap-2 font-normal"
                       >
-                        Holder Name
+                        <LockClosedIcon className="h-4 w-4 text-gray-400" />
+                        Payments are secure and encrypted
                       </Typography>
-                      <Input
-                        placeholder="name@mail.com"
-                        className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                        labelProps={{
-                          className: "before:content-none after:content-none",
-                        }}
-                      />
                     </div>
-                    <Button size="lg">Pay Now</Button>
-                    <Typography
-                      variant="small"
-                      color="gray"
-                      className="mt-2 flex items-center justify-center gap-2 font-medium opacity"
-                    >
-                      <LockClosedIcon className="-mt-0.5 h-4 w-4" /> Payments
-                      are secure and encrypted
-                    </Typography>
+
+                    <Button className="mt-4" fullWidth>
+                      Pay Now
+                    </Button>
                   </form>
                 </TabPanel>
                 <TabPanel value="paypal" className="p-0">
-                  <form className="mt-12 flex flex-col gap-4">
-                    <div>
-                      <Typography
-                        variant="paragraph"
-                        color="blue-gray"
-                        className="mb-4 font-medium"
-                      >
-                        Personal Details
-                      </Typography>
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="mb-2 font-medium"
-                      >
-                        Your Email
-                      </Typography>
-                      <Input
-                        type="email"
-                        placeholder="name@mail.com"
-                        className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                        labelProps={{
-                          className: "before:content-none after:content-none",
-                        }}
+                  <div className="mt-12 flex flex-col gap-4">
+                    <Button variant="outlined" className="flex items-center justify-center gap-4">
+                      <img
+                        alt="paypal"
+                        src="https://www.paypalobjects.com/webstatic/icon/pp258.png"
+                        className="w-6"
                       />
-                    </div>
-
-                    <div className="my-6">
-                      <Typography
-                        variant="paragraph"
-                        color="blue-gray"
-                        className="mb-4 font-medium"
-                      >
-                        Billing Address
-                      </Typography>
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="mb-2 font-medium"
-                      >
-                        Country
-                      </Typography>
-                      <Select
-                        placeholder="USA"
-                        className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                        labelProps={{
-                          className: "before:content-none after:content-none",
-                        }}
-                        menuProps={{ className: "h-48" }}
-                      >
-                        {countries.map(({ name, flags }) => (
-                          <Option key={name} value={name}>
-                            <div className="flex items-center gap-x-2">
-                              <img
-                                src={flags.svg}
-                                alt={name}
-                                className="h-4 w-4 rounded-full object-cover"
-                              />
-                              {name}
-                            </div>
-                          </Option>
-                        ))}
-                      </Select>
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="mt-4 -mb-2 font-medium"
-                      >
-                        Postal Code
-                      </Typography>
-                      <Input
-                        placeholder="0000"
-                        className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                        labelProps={{
-                          className: "before:content-none after:content-none",
-                        }}
-                        containerProps={{ className: "mt-4" }}
-                      />
-                    </div>
-                    <Button size="lg">pay with paypal</Button>
-                    <Typography
-                      variant="small"
-                      color="gray"
-                      className="flex items-center justify-center gap-2 font-medium opacity-60"
-                    >
-                      <LockClosedIcon className="-mt-0.5 h-4 w-4" /> Payments
-                      are secure and encrypted
-                    </Typography>
-                  </form>
+                      Continue with PayPal
+                    </Button>
+                  </div>
                 </TabPanel>
               </TabsBody>
             </Tabs>
