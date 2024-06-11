@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { Form, Button, Container } from "react-bootstrap";
 import emailjs from "emailjs-com";
-//import "./Contact.css"; // Remove this import if you've deleted the file
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -43,95 +41,79 @@ const Contact = () => {
   };
 
   return (
-    <div className="container mx-auto p-8 bg-gray-100 rounded-lg shadow-md max-w-xl mt-8">
-      <h1 className="text-4xl text-center text-blue-600 mb-4">KONTAKTA OSS</h1>
+    <div className="max-w-xl mx-auto p-8">
+      <h1 className="text-4xl text-center text-indigo-600 mb-4">KONTAKTA OSS</h1>
       <p className="text-center text-gray-600 mb-8">
         Vänligen kontakta oss via vårt formulär eller våra kontaktuppgifter. Vi
         försöker alltid svara inom 24 timmar.
       </p>
-      <Form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <Form.Group controlId="formName">
-            <Form.Label className="block text-gray-700 font-bold mb-2">
-              NAMN
-            </Form.Label>
-            <Form.Control
+      <form onSubmit={handleSubmit}>
+        <div className="flex justify-between mb-4">
+          <div className="w-1/2 pr-2">
+            <label className="block text-gray-700 font-bold mb-2">Name</label>
+            <input
               type="text"
-              placeholder="NAMN"
               name="name"
               value={formData.name}
               onChange={handleChange}
               required
-              className="block w-full p-2 border border-gray-300 rounded"
+              className="w-full p-2 border border-gray-300 rounded"
             />
-          </Form.Group>
-        </div>
-        <div className="mb-4">
-          <Form.Group controlId="formPhone">
-            <Form.Label className="block text-gray-700 font-bold mb-2">
+          </div>
+          <div className="w-1/2 pl-2">
+            <label className="block text-gray-700 font-bold mb-2">
               Telefonnummer
-            </Form.Label>
-            <Form.Control
+            </label>
+            <input
               type="tel"
-              placeholder="Telefonnummer"
               name="phone"
               value={formData.phone}
               onChange={handleChange}
               required
-              className="block w-full p-2 border border-gray-300 rounded"
+              className="w-full p-2 border border-gray-300 rounded"
             />
-          </Form.Group>
+          </div>
         </div>
         <div className="mb-4">
-          <Form.Group controlId="formEmail">
-            <Form.Label className="block text-gray-700 font-bold mb-2">
-              E-postadress
-            </Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="E-postadress"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="block w-full p-2 border border-gray-300 rounded"
-            />
-          </Form.Group>
+          <label className="block text-gray-700 font-bold mb-2">
+            E-postadress
+          </label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="w-full p-2 border border-gray-300 rounded"
+          />
         </div>
         <div className="mb-4">
-          <Form.Group controlId="formMessage">
-            <Form.Label className="block text-gray-700 font-bold mb-2">
-              Meddelande
-            </Form.Label>
-            <Form.Control
-              as="textarea"
-              rows={4}
-              placeholder="Meddelande"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              className="block w-full p-2 border border-gray-300 rounded"
-            />
-          </Form.Group>
+          <label className="block text-gray-700 font-bold mb-2">Meddelande</label>
+          <textarea
+            name="message"
+            rows="4"
+            value={formData.message}
+            onChange={handleChange}
+            required
+            className="w-full p-2 border border-gray-300 rounded"
+          ></textarea>
         </div>
-        <Button
-          variant="danger"
+        <button
           type="submit"
-          className="w-full py-2 bg-gray-900 text-white font-bold rounded hover:bg-red-600"
+          className="w-full py-2 bg-black text-white font-bold rounded hover:bg-red-600"
         >
           Skicka
-        </Button>
-      </Form>
+        </button>
+      </form>
       {showConfirmation && (
         <div className="mt-4 p-4 border border-green-500 bg-green-100 text-green-700 rounded text-center">
           <p>Your message was sent successfully!</p>
-          <Button
+          <button
             onClick={() => setShowConfirmation(false)}
             className="mt-2 py-2 px-4 bg-green-500 text-white rounded hover:bg-green-600"
           >
             OK
-          </Button>
+          </button>
         </div>
       )}
     </div>
