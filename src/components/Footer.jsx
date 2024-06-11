@@ -36,13 +36,13 @@ export default function Footer({ mode }) {
             <h2 className="title-font font-bold text-gray-900 tracking-widest text-sm mb-3" style={{ color: mode === 'dark' ? 'white' : '' }}>MENU</h2>
             <nav className="list-none mb-10">
               <li>
-                <Link to={'/skor'} className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>Skor</Link>
+                <Link to={'/Products'} className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>Skor</Link>
               </li>
               <li>
-                <Link to={'/kläder'} className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>Kläder</Link>
+                <Link to={'/Clothing'} className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>Kläder</Link>
               </li>
               <li>
-                <Link to={'/allaprodukter'} className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>Alla produkter</Link>
+                <Link to={'/Products'} className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>Alla produkter</Link>
               </li>
             </nav>
           </div>
