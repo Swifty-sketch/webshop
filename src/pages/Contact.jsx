@@ -118,7 +118,7 @@ const Contact = () => {
         <Button
           variant="danger"
           type="submit"
-          className="w-full py-2 bg-red-500 text-white font-bold rounded hover:bg-red-600"
+          className="w-full py-2 bg-gray-900 text-white font-bold rounded hover:bg-red-600"
         >
           Skicka
         </Button>

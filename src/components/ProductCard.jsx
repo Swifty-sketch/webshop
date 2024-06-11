@@ -24,7 +24,7 @@ const ProductCard = ({ product, handleClick }) => {
   return (
     <Link
       to={{ pathname: '/productpage', state: { product } }}
-      className="w-[300px] h-[350px] mx-auto flex flex-col"
+      className="w-[275px] h-[300px] mx-auto flex flex-col"
     >
       <Card
         className="h-full w-full flex flex-col"
