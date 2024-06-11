@@ -24,7 +24,7 @@ const ProductCard = ({ product, handleClick }) => {
   return (
     <Link
       to={{ pathname: '/productpage', state: { product } }}
-      className="w-[300px] h-[300px] mx-auto flex flex-col"
+      className="w-[300px] h-[350px] mx-auto flex flex-col"
     >
       <Card
         className="h-full w-full flex flex-col"
@@ -37,12 +37,12 @@ const ProductCard = ({ product, handleClick }) => {
             className="h-full w-full object-cover rounded-t-md"
           />
         </CardHeader>
-        <CardBody className="p-4 flex-grow">
+        <CardBody className="p-2 flex-grow">
           <div className="mb-2">
-            <Typography color="blue-gray" className="font-medium mb-1">
+            <Typography color="blue-gray" className="text-sm font-medium mb-1">
               {truncateString(product.title, 20)}
             </Typography>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography color="blue-gray" className="text-sm font-medium">
               Från {product.price.toFixed(2)} SEK
             </Typography>
           </div>

@@ -22,7 +22,7 @@ function Navbar() {
     <nav className="fixed w-full h-24 shadow-xl bg-white z-10">
       <div className="flex justify-between items-center w-full h-full px-4 2xl:px-16">
         <Link to="/">
-        <img src={Logo} alt="Shoes & Stitches" className="h-10" />
+          <img src={Logo} alt="Shoes & Stitches" className="h-10" />
         </Link>
         <div className="hidden sm:flex">
           <ul className="hidden sm:flex gap-2">
@@ -65,22 +65,16 @@ function Navbar() {
             </li>
           </ul>
         </div>
-        <div className="sm:hidden cursor-pointer pl-24">
-          <ul className="flex items-center gap-2">
-            <li>
-              <MdShoppingCart size={25} onClick={toggleCart} />
-            </li>
-            <li className="mr-8">
-              <FaBars onClick={handleNav} size={25} />
-            </li>
-          </ul>
+        <div className="sm:hidden flex items-center gap-2">
+          <MdShoppingCart size={25} onClick={toggleCart} />
+          <FaBars onClick={handleNav} size={25} />
         </div>
       </div>
       <div
         className={
           nav
-            ? "fixed left-0 top-0 w-48 sm:hidden h-screen bg-white p-10 ease-in-out duration-500 shadow-lg"
-            : "fixed left-[-100%] top-0 w-48 sm:hidden h-screen bg-white p-10 ease-in-out duration-500 shadow-lg"
+            ? "fixed left-0 top-0 w-[75%] sm:w-[50%] md:w-[30%] h-screen bg-white p-10 ease-in-out duration-500 shadow-lg"
+            : "fixed left-[-100%] top-0 w-[75%] sm:w-[50%] md:w-[30%] h-screen bg-white p-10 ease-in-out duration-500 shadow-lg"
         }
       >
         <div className="flex w-full items-center justify-end">
@@ -88,7 +82,7 @@ function Navbar() {
             <AiOutlineClose size={25} />
           </div>
         </div>
-        <ul className="flex flex-col gap-9 mt-10 ">
+        <ul className="flex flex-col gap-9 mt-10">
           <li>
             <Link
               to="/about"

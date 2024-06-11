@@ -73,17 +73,17 @@ const Products = () => {
     setCurrentPage(1); // Reset to the first page
   };
 
-
   return (
-    <div className="container mx-auto py-8">
+    <div className="container mx-auto py-8 px-4">
       <h1 className="text-2xl font-bold mb-4 text-center">Shoes</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
         {/* Render all products except the last one */}
         {currentProducts.slice(0, lastProductIndex).map((product, index) => (
           <ProductCard
             key={index}
             product={product}
             handleClick={handleClick}
+            className="p-2"
           />
         ))}
         {/* Render the last product */}
@@ -92,6 +92,7 @@ const Products = () => {
             key={lastProductIndex}
             product={currentProducts[lastProductIndex]}
             handleClick={handleClick}
+            className="p-2"
           />
         )}
       </div>
