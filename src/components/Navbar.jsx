@@ -18,10 +18,14 @@ function Navbar() {
     setIsCartOpen(!isCartOpen);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <nav className="fixed w-full h-24 shadow-xl bg-white z-10">
       <div className="flex justify-between items-center w-full h-full px-4 2xl:px-16">
-        <Link to="/">
+        <Link to="/" onClick={scrollToTop}>
           <img src={Logo} alt="Shoes & Stitches" className="h-10" />
         </Link>
         <div className="hidden sm:flex">
@@ -30,6 +34,7 @@ function Navbar() {
               <Link
                 to="/about"
                 className="text-xl uppercase hover:border-b-4 hover:border-red-300"
+                onClick={scrollToTop}
               >
                 About
               </Link>
@@ -38,6 +43,7 @@ function Navbar() {
               <Link
                 to="/contact"
                 className="text-xl uppercase hover:border-b-4 hover:border-red-300"
+                onClick={scrollToTop}
               >
                 Contact
               </Link>
@@ -46,6 +52,7 @@ function Navbar() {
               <Link
                 to="/products"
                 className="text-xl uppercase hover:border-b-4 hover:border-red-300"
+                onClick={scrollToTop}
               >
                 Shoes
               </Link>
@@ -54,6 +61,7 @@ function Navbar() {
               <Link
                 to="/clothing"
                 className="text-xl uppercase hover:border-b-4 hover:border-red-300"
+                onClick={scrollToTop}
               >
                 Clothing
               </Link>
@@ -86,7 +94,10 @@ function Navbar() {
           <li>
             <Link
               to="/about"
-              onClick={() => setNav(false)}
+              onClick={() => {
+                setNav(false);
+                scrollToTop();
+              }}
               className="text-xl uppercase hover:border-b-4 hover:border-red-300"
             >
               About
@@ -95,7 +106,10 @@ function Navbar() {
           <li>
             <Link
               to="/contact"
-              onClick={() => setNav(false)}
+              onClick={() => {
+                setNav(false);
+                scrollToTop();
+              }}
               className="text-xl uppercase hover:border-b-4 hover:border-red-300"
             >
               Contact
@@ -104,7 +118,10 @@ function Navbar() {
           <li>
             <Link
               to="/products"
-              onClick={() => setNav(false)}
+              onClick={() => {
+                setNav(false);
+                scrollToTop();
+              }}
               className="text-xl uppercase hover:border-b-4 hover:border-red-300"
             >
               Shoes
@@ -113,7 +130,10 @@ function Navbar() {
           <li>
             <Link
               to="/clothing"
-              onClick={() => setNav(false)}
+              onClick={() => {
+                setNav(false);
+                scrollToTop();
+              }}
               className="text-xl uppercase hover:border-b-4 hover:border-red-300"
             >
               Clothing

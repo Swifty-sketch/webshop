@@ -32,7 +32,7 @@ const formatExpires = (value) => {
 };
 
 const BillingForm = ({ countries }) => (
-  <div className="mt-8 w-full flex flex-col items-center">
+  <div className="mt-8 w-full flex flex-col items-center pb-4"> {/* Added pb-4 here */}
     <Typography variant="h6" className="mb-4">
       Billing Details
     </Typography>
@@ -78,8 +78,9 @@ const BillingForm = ({ countries }) => (
   </div>
 );
 
+
 const CartItems = ({ cartItems }) => (
-  <div className="w-full max-h-48 overflow-y-auto">
+  <div className="w-1/2 max-h-48 overflow-y-auto">
     {cartItems.map((item, index) => (
       <div key={index} className="flex items-center p-4 border-t border-b w-full">
         <img src={item.image} alt={item.title} className="w-16 h-16 mr-4" />
@@ -199,7 +200,7 @@ const PaymentForm = ({ type, setType, cardNumber, setCardNumber, cardExpires, se
           </TabPanel>
           <TabPanel value="paypal" className="p-0">
             <div className="mt-12 flex flex-col gap-4">
-              <Link to="/CheckoutEnd"variant="outlined" className="flex items-center justify-center gap-4">
+              <Link to="/CheckoutEnd" variant="outlined" className="flex items-center justify-center gap-4">
                 <img alt="paypal" src="https://www.paypalobjects.com/webstatic/icon/pp258.png" className="w-6" />
                 Continue with PayPal
               </Link>
@@ -218,26 +219,48 @@ export default function CheckoutForm() {
   const [cardNumber, setCardNumber] = useState("");
   const [cardExpires, setCardExpires] = useState("");
 
+  const [openSection, setOpenSection] = useState(null);
+
   const cartItems = JSON.parse(localStorage.getItem("cartStorage")) || [];
 
+  const toggleSection = (section) => {
+    setOpenSection((prev) => (prev === section ? null : section));
+  };
+
   return (
-    <div className="p-8">
-      <div className="flex flex-col lg:flex-row justify-center">
-        <div className="w-full lg:w-1/2 flex flex-col items-center">
-          <CartItems cartItems={cartItems} />
-          <BillingForm countries={countries} />
-        </div>
-        <div className="w-full lg:w-1/2 flex justify-center mt-8 lg:mt-0">
-          <PaymentForm
-            type={type}
-            setType={setType}
-            cardNumber={cardNumber}
-            setCardNumber={setCardNumber}
-            cardExpires={cardExpires}
-            setCardExpires={setCardExpires}
-          />
-        </div>
-      </div>
+    <div className="p-8 flex flex-col items-center">
+      <Button
+        onClick={() => toggleSection('cartItems')}
+        className="mb-4 bg-black text-white py-2 px-4 hover:bg-gray-800"
+      >
+        {openSection === 'cartItems' ? "Hide" : "Show"} Cart Items
+      </Button>
+      {openSection === 'cartItems' && <CartItems cartItems={cartItems} />}
+
+      <Button
+        onClick={() => toggleSection('billingForm')}
+        className="mb-4 bg-black text-white py-2 px-4 hover:bg-gray-800"
+      >
+        {openSection === 'billingForm' ? "Hide" : "Show"} Billing Form
+      </Button>
+      {openSection === 'billingForm' && <BillingForm countries={countries} />}
+
+      <Button
+        onClick={() => toggleSection('paymentForm')}
+        className="mb-4 bg-black text-white py-2 px-4 hover:bg-gray-800"
+      >
+        {openSection === 'paymentForm' ? "Hide" : "Show"} Payment Form
+      </Button>
+      {openSection === 'paymentForm' && (
+        <PaymentForm
+          type={type}
+          setType={setType}
+          cardNumber={cardNumber}
+          setCardNumber={setCardNumber}
+          cardExpires={cardExpires}
+          setCardExpires={setCardExpires}
+        />
+      )}
     </div>
   );
 }
