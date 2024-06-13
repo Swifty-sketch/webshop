@@ -32,7 +32,7 @@ const formatExpires = (value) => {
 };
 
 const BillingForm = ({ countries }) => (
-  <div className="mt-8 w-full flex flex-col items-center pb-4"> {/* Added pb-4 here */}
+  <div className="mt-8 w-full flex flex-col items-center pb-4">
     <Typography variant="h6" className="mb-4">
       Billing Details
     </Typography>
@@ -77,7 +77,6 @@ const BillingForm = ({ countries }) => (
     </form>
   </div>
 );
-
 
 const CartItems = ({ cartItems }) => (
   <div className="w-1/2 max-h-48 overflow-y-auto">
@@ -195,7 +194,6 @@ const PaymentForm = ({ type, setType, cardNumber, setCardNumber, cardExpires, se
               <Link to="/CheckoutEnd" className="mt-4 block w-full text-center bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
                 Pay Now
               </Link>
-
             </form>
           </TabPanel>
           <TabPanel value="paypal" className="p-0">
@@ -219,7 +217,7 @@ export default function CheckoutForm() {
   const [cardNumber, setCardNumber] = useState("");
   const [cardExpires, setCardExpires] = useState("");
 
-  const [openSection, setOpenSection] = useState(null);
+  const [openSection, setOpenSection] = useState('cartItems');
 
   const cartItems = JSON.parse(localStorage.getItem("cartStorage")) || [];
 
