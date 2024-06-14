@@ -1,5 +1,5 @@
 import React from "react";
-import customerService from "../assets/customerService.png";
+//import customerService from "../assets/customerService.png";
 
 const About = () => {
   return (
@@ -13,7 +13,7 @@ const About = () => {
         millions of customers.
       </p>
       <img
-        src={customerService}
+        src="/CustomerService.png"
         alt="About Us"
         className="mt-12 w-full max-w-2xl"
         style={{ maxWidth: "1000px" }}
