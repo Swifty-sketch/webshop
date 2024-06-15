@@ -42,7 +42,7 @@ const Contact = () => {
 
   return (
     <div className="max-w-xl mx-auto p-8">
-      <h1 className="text-4xl text-center text-indigo-600 mb-4 font-poppins font-bold color-black text-black">
+      <h1 className="text-4xl text-center text-indigo-600 mb-4 font-poppins font-bold text-black">
         Contact us
       </h1>
       <p className="text-center text-gray-600 mb-8">
