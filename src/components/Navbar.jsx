@@ -4,7 +4,6 @@ import { FaBars } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import { MdShoppingCart } from "react-icons/md";
 import Cart from "./Cart";
-import Logo from "../assets/Logo1.png";
 
 function Navbar() {
   const [nav, setNav] = useState(false);
@@ -26,7 +25,7 @@ function Navbar() {
     <nav className="fixed w-full h-24 shadow-xl bg-white z-10">
       <div className="flex justify-between items-center w-full h-full px-4 2xl:px-16">
         <Link to="/" onClick={scrollToTop}>
-          <img src={Logo} alt="Shoes & Stitches" className="h-10" />
+          <img src="/Logo1.png" alt="Shoes & Stitches" className="h-10" />
         </Link>
         <div className="hidden sm:flex">
           <ul className="hidden sm:flex gap-2">

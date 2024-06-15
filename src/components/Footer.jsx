@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa';
-import darkLogo from '../assets/Logo2.png';
-import lightLogo from '../assets/Logo1.png';
+//import darkLogo from '../assets/Logo2.png';
+//import lightLogo from '../assets/Logo1.png';
 
 const items = [
   {
@@ -91,7 +91,7 @@ export default function Footer({ mode }) {
       <div className="bg-gray-200" style={{ backgroundColor: mode === 'dark' ? 'rgb(55 57 61)' : '', color: mode === 'dark' ? 'white' : '' }}>
         <div className="container px-5 py-3 mx-auto flex items-center justify-center sm:flex-row flex-col">
           <Link to={'/'} className='flex'>
-            <img src={mode === 'light' ? darkLogo : lightLogo} className="w-full" alt="Shoes & Stitches Logo" />
+            <img src="/Logo1.png" className="w-full" alt="Shoes & Stitches Logo" />
           </Link>
           <p className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4" style={{ color: mode === 'dark' ? 'white' : '' }}>© 2024 Shoes&Stitches —
             <a href="/" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank" style={{ color: mode === 'dark' ? 'white' : '' }}>www.shoes&stiches.com</a>
