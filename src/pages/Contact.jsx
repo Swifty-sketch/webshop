@@ -42,7 +42,9 @@ const Contact = () => {
 
   return (
     <div className="max-w-xl mx-auto p-8">
-      <h1 className="text-4xl text-center text-indigo-600 mb-4">KONTAKTA OSS</h1>
+      <h1 className="text-4xl text-center text-indigo-600 mb-4 font-poppins font-bold text-black">
+        Contact us
+      </h1>
       <p className="text-center text-gray-600 mb-8">
         Vänligen kontakta oss via vårt formulär eller våra kontaktuppgifter. Vi
         försöker alltid svara inom 24 timmar.
@@ -88,7 +90,9 @@ const Contact = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Meddelande</label>
+          <label className="block text-gray-700 font-bold mb-2">
+            Meddelande
+          </label>
           <textarea
             name="message"
             rows="4"
