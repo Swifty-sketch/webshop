@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const ProductPage = () => {
@@ -10,6 +10,16 @@ const ProductPage = () => {
   const [quantity, setQuantity] = useState(1);
   const [showPreOrderInfo, setShowPreOrderInfo] = useState(false);
   const [showShippingInfo, setShowShippingInfo] = useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false); // State to manage the pop-up visibility
+
+  useEffect(() => {
+    if (showSuccessPopup) {
+      const timer = setTimeout(() => {
+        setShowSuccessPopup(false);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [showSuccessPopup]);
 
   if (!product) {
     return <div>Loading...</div>;
@@ -49,6 +59,8 @@ const ProductPage = () => {
     const productWithSizeAndQuantity = { ...product, size: selectedSize, quantity: quantity };
     cartStorage.push(productWithSizeAndQuantity);
     localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
+
+    setShowSuccessPopup(true); // Show the success pop-up
   };
 
   return (
@@ -86,7 +98,7 @@ const ProductPage = () => {
             </div>
             <button
               onClick={handleConfirmOrder}
-              className="mt-6 py-3 px-4 bg-red-500 text-white font-bold rounded-md w-full hover:bg-white hover:text-red-500 border border-red-500 transition-colors duration-150"
+              className="mt-6 py-3 px-4 bg-gray-800 text-white font-bold rounded-md w-full hover:bg-gray-600 transition-colors duration-150"
             >
               Add to Cart
             </button>
@@ -125,6 +137,16 @@ const ProductPage = () => {
           </div>
         </div>
       </div>
+      {showSuccessPopup && (
+        <div className="fixed top-20 left-1/2 transform -translate-x-1/2 w-2/3 p-4 bg-green-100 text-green-700 text-center shadow-md transition-opacity duration-500 ease-in-out opacity-100">
+          <div className="flex items-center justify-center mb-2">
+            <div className="text-green-500 text-3xl">&#10003;</div>
+          </div>
+          <h2 className="text-xl font-semibold">SUCCESS</h2>
+          <p className="mt-2">Thank you for your purchase!</p>
+          <p className="mt-1">Navigate to the Checkout on the top right</p>
+        </div>
+      )}
     </div>
   );
 };
