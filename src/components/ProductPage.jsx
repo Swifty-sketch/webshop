@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import ProductCard from '../components/ProductCard';
+import myProducts from '../assets/myProducts.json'; // Ensure this path is correct
 
 const ProductPage = () => {
   const location = useLocation();
@@ -11,6 +13,7 @@ const ProductPage = () => {
   const [showPreOrderInfo, setShowPreOrderInfo] = useState(false);
   const [showShippingInfo, setShowShippingInfo] = useState(false);
   const [showSuccessPopup, setShowSuccessPopup] = useState(false); // State to manage the pop-up visibility
+  const [randomProducts, setRandomProducts] = useState([]);
 
   useEffect(() => {
     if (showSuccessPopup) {
@@ -20,6 +23,23 @@ const ProductPage = () => {
       return () => clearTimeout(timer);
     }
   }, [showSuccessPopup]);
+
+  useEffect(() => {
+    const selectRandomProducts = (products, num = 4) => {
+      const selectedProducts = [];
+      while (selectedProducts.length < num) {
+        const randomIndex = Math.floor(Math.random() * products.length);
+        const randomProduct = products[randomIndex];
+        if (!selectedProducts.includes(randomProduct)) {
+          selectedProducts.push(randomProduct);
+        }
+      }
+      return selectedProducts;
+    };
+
+    const randomProducts = selectRandomProducts(myProducts);
+    setRandomProducts(randomProducts);
+  }, []);
 
   if (!product) {
     return <div>Loading...</div>;
@@ -61,6 +81,10 @@ const ProductPage = () => {
     localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
 
     setShowSuccessPopup(true); // Show the success pop-up
+  };
+
+  const handleClick = (product) => {
+    localStorage.setItem('currentProduct', JSON.stringify(product));
   };
 
   return (
@@ -147,6 +171,19 @@ const ProductPage = () => {
           <p className="mt-1">Navigate to the Checkout on the top right</p>
         </div>
       )}
+      {/* Add 4 product cards at the bottom */}
+      <div className="mt-10">
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 text-black">You May Also Like</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {randomProducts.map((product, index) => (
+            <ProductCard
+              key={index}
+              product={product}
+              handleClick={handleClick}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
