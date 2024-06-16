@@ -54,7 +54,10 @@ const Products = () => {
 
   const handleClick = (product) => {
     localStorage.setItem('currentProduct', JSON.stringify(product));
-    window.scrollTo(0, 0); // Scroll to the top of the page
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   const indexOfLastProduct = currentPage * productsPerPage;
@@ -64,7 +67,10 @@ const Products = () => {
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
-    window.scrollTo(0, 0); // Scroll to the top of the page when paginating
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   const filterProducts = (category, productList = products) => {

@@ -30,8 +30,16 @@ const Clothing = () => {
     filterAndSortProducts('clothing', products);
   }, [selectedSubcategory, sortOption, products]);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   const handleClick = (product) => {
     localStorage.setItem('currentProduct', JSON.stringify(product));
+    scrollToTop();
   };
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
