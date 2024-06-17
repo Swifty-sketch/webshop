@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Input } from '@material-tailwind/react';
+import { useNavigate } from 'react-router-dom';
 
 export default function CheckoutForm() {
   const [editing, setEditing] = useState(false);
@@ -11,6 +12,7 @@ export default function CheckoutForm() {
   });
   const [deliveryAddress, setDeliveryAddress] = useState('Samma adress som ovan');
   const [paymentMethod, setPaymentMethod] = useState('Få först. Betala sen.');
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Load user info from local storage on component mount
@@ -34,6 +36,10 @@ export default function CheckoutForm() {
       // Save user info to local storage when exiting edit mode
       localStorage.setItem('userInfo', JSON.stringify(userInfo));
     }
+  };
+
+  const handlePayment = () => {
+    navigate('/checkoutend');
   };
 
   return (
@@ -136,18 +142,6 @@ export default function CheckoutForm() {
           <label className="flex items-center gap-2">
             <input
               type="radio"
-              name="deliveryAddress"
-              value="Samma adress som ovan"
-              checked={deliveryAddress === 'Samma adress som ovan'}
-              onChange={(e) => setDeliveryAddress(e.target.value)}
-              className="form-radio"
-            />
-            Samma adress som ovan
-          </label>
-          <Button className="mt-2 pt-2" size="sm">Ändra</Button>
-          <label className="flex items-center gap-2">
-            <input
-              type="radio"
               name="deliveryOption"
               value="Standardleverans"
               defaultChecked
@@ -174,7 +168,9 @@ export default function CheckoutForm() {
             Hemleverans - SEK 129
           </label>
         </div>
-        <Button className="mt-2" size="sm">Betala</Button>
+        <Button onClick={handlePayment} className="mt-2" size="sm">
+          Betala
+        </Button>
       </div>
     </div>
   );
