@@ -95,7 +95,7 @@ export default function CheckoutForm() {
             <p>{userInfo.email}</p>
           </div>
         )}
-        <Button onClick={handleEditToggle} className="mt-2" size="sm">
+        <Button onClick={handleEditToggle} className="mt-2 bg-gray-800 hover:bg-gray-600" size="sm">
           {editing ? 'Spara' : 'Ändra'}
         </Button>
       </div>
@@ -173,7 +173,7 @@ export default function CheckoutForm() {
             Hemleverans - SEK 129
           </label>
         </div>
-        <Button onClick={handlePayment} className="mt-2" size="sm">
+        <Button onClick={handlePayment} className="mt-2 bg-gray-800 hover:bg-gray-600" size="sm">
           Betala
         </Button>
       </div>

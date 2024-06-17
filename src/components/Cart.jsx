@@ -84,7 +84,7 @@ function Cart({ isCartOpen, toggleCart }) {
         <p className="p-4 border-b">Total: {subtotal}$</p>
         <Link
           to={{ pathname: "/checkout", state: { cartItems } }}
-          className="bg-black text-white py-2 px-4 m-4 rounded"
+          className="bg-gray-800 hover:bg-gray-600 text-white py-2 px-4 m-4 rounded"
           onClick={toggleCart} // Add onClick event handler
         >
           Checkout
