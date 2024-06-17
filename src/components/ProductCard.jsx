@@ -24,13 +24,13 @@ const ProductCard = ({ product, handleClick }) => {
   return (
     <Link
       to={{ pathname: '/productpage', state: { product } }}
-      className="w-[275px] mx-auto flex flex-col"
+      className="flex flex-col"
     >
       <Card
         className="w-full flex flex-col"
         onClick={handleCardClick}
       >
-        <CardHeader shadow={false} floated={false} className="flex justify-center items-center">
+        <CardHeader shadow={false} floated={false} className="flex justify-center items-center h-48">
           <img
             src={product.image}
             alt={product.title}
@@ -49,7 +49,7 @@ const ProductCard = ({ product, handleClick }) => {
         </CardBody>
         <CardFooter className="pt-0">
           <div className="mt-auto">
-            {/* You can remove the button */}
+            {/* Footer content can be added here if needed */}
           </div>
         </CardFooter>
       </Card>

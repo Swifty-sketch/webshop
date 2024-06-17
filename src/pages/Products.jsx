@@ -21,25 +21,22 @@ const Products = () => {
       setProducts(allProducts);
       filterProducts(category || 'all', allProducts);
     } else {
-      // Fetch one random product from the API
       fetch('https://fakestoreapi.com/products')
         .then(response => response.json())
         .then(data => {
           const randomProduct = getRandomProduct(data);
           localStorage.setItem('randomProduct', JSON.stringify(randomProduct));
 
-          // Fetch all products with category "shoe" from the JSON
           const filteredProducts = myProducts.filter(product => product.category === 'shoe');
           localStorage.setItem('shoeProducts', JSON.stringify(filteredProducts));
 
-          const allProducts = [...filteredProducts, randomProduct]; // Place API product last
+          const allProducts = [...filteredProducts, randomProduct];
           setProducts(allProducts);
           filterProducts(category || 'all', allProducts);
         })
         .catch(error => {
           console.error('Error fetching random product from API:', error);
 
-          // Fetch all products with category "shoe" from the JSON if API fails
           const filteredProducts = myProducts.filter(product => product.category === 'shoe');
           setProducts(filteredProducts);
           filterProducts(category || 'all', filteredProducts);
@@ -80,14 +77,13 @@ const Products = () => {
       const filtered = productList.filter(product => product.category === category);
       setFilteredProducts(filtered);
     }
-    setCurrentPage(1); // Reset to the first page
+    setCurrentPage(1);
   };
 
   return (
     <div className="container mx-auto py-8 px-4">
       <h1 className="text-2xl font-bold mb-4 text-center">Shoes</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-        {/* Render all products except the last one */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {currentProducts.slice(0, lastProductIndex).map((product, index) => (
           <ProductCard
             key={index}
@@ -96,7 +92,6 @@ const Products = () => {
             className="p-2"
           />
         ))}
-        {/* Render the last product */}
         {currentProducts[lastProductIndex] && (
           <ProductCard
             key={lastProductIndex}
