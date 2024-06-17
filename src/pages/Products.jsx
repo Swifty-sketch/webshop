@@ -17,7 +17,7 @@ const Products = () => {
     const storedShoeProducts = JSON.parse(localStorage.getItem('shoeProducts'));
 
     if (storedRandomProduct && storedShoeProducts) {
-      const allProducts = [storedRandomProduct, ...storedShoeProducts];
+      const allProducts = [...storedShoeProducts, storedRandomProduct]; // Place random product at the end
       setProducts(allProducts);
       filterProducts(category || 'all', allProducts);
     } else {
@@ -51,16 +51,8 @@ const Products = () => {
 
   const handleClick = (product) => {
     localStorage.setItem('currentProduct', JSON.stringify(product));
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    navigate(`/product/${product.id}`);
   };
-
-  const indexOfLastProduct = currentPage * productsPerPage;
-  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
-  const lastProductIndex = currentProducts.length - 1;
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -80,11 +72,16 @@ const Products = () => {
     setCurrentPage(1);
   };
 
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
+  const lastProductIndex = currentProducts.length - 1;
+
   return (
     <div className="container mx-auto py-8 px-4">
       <h1 className="text-2xl font-bold mb-4 text-center">Shoes</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {currentProducts.slice(0, lastProductIndex).map((product, index) => (
+        {currentProducts.map((product, index) => (
           <ProductCard
             key={index}
             product={product}
@@ -92,14 +89,6 @@ const Products = () => {
             className="p-2"
           />
         ))}
-        {currentProducts[lastProductIndex] && (
-          <ProductCard
-            key={lastProductIndex}
-            product={currentProducts[lastProductIndex]}
-            handleClick={handleClick}
-            className="p-2"
-          />
-        )}
       </div>
       <div className="flex justify-center mt-4">
         {Array.from({ length: Math.ceil(filteredProducts.length / productsPerPage) }).map((_, index) => (
