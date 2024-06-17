@@ -5,9 +5,12 @@ import myProducts from '../assets/myProducts.json'; // Ensure this path is corre
 
 const ProductPage = () => {
   const location = useLocation();
+
+  // Retrieve product from local storage or from the location state
   const storedProduct = JSON.parse(localStorage.getItem('currentProduct'));
   const product = storedProduct || (location.state && location.state.product);
 
+  // State variables
   const [selectedSize, setSelectedSize] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [showPreOrderInfo, setShowPreOrderInfo] = useState(false);
@@ -15,6 +18,7 @@ const ProductPage = () => {
   const [showSuccessPopup, setShowSuccessPopup] = useState(false); // State to manage the pop-up visibility
   const [randomProducts, setRandomProducts] = useState([]);
 
+  // Effect to hide the success pop-up after 3 seconds
   useEffect(() => {
     if (showSuccessPopup) {
       const timer = setTimeout(() => {
@@ -24,6 +28,7 @@ const ProductPage = () => {
     }
   }, [showSuccessPopup]);
 
+  // Effect to select random products for the "You May Also Like" section
   useEffect(() => {
     const selectRandomProducts = (products, num = 4) => {
       const selectedProducts = [];
@@ -41,14 +46,18 @@ const ProductPage = () => {
     setRandomProducts(randomProducts);
   }, []);
 
+  // Render loading state if product data is not available
   if (!product) {
     return <div>Loading...</div>;
   }
 
+  // Function to render size selection buttons
   const renderSizeButtons = () => {
     if (product.category) {
       const isShoeCategory = product.category === 'shoe';
-      const sizes = isShoeCategory ? ["35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45"] : ["S", "M", "L", "XL"];
+      const sizes = isShoeCategory
+        ? ["35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45"]
+        : ["S", "M", "L", "XL"];
       return (
         <div className="flex flex-wrap gap-2 mt-4">
           {sizes.map(size => (
@@ -69,6 +78,7 @@ const ProductPage = () => {
     }
   };
 
+  // Handle order confirmation
   const handleConfirmOrder = () => {
     if (!selectedSize) {
       alert('Please select a size');
@@ -83,6 +93,7 @@ const ProductPage = () => {
     setShowSuccessPopup(true); // Show the success pop-up
   };
 
+  // Handle product click to store current product in local storage
   const handleClick = (product) => {
     localStorage.setItem('currentProduct', JSON.stringify(product));
   };
@@ -147,9 +158,9 @@ const ProductPage = () => {
                 </ul>
               )}
             </div>
-            <div className="mt-10 ">
+            <div className="mt-10">
               <h2
-                className="text-lg font-semibold text-gray-800 cursor-pointer "
+                className="text-lg font-semibold text-gray-800 cursor-pointer"
                 onClick={() => setShowShippingInfo(!showShippingInfo)}
               >
                 Shipping Information

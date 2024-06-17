@@ -3,41 +3,46 @@ import { Button, Input } from '@material-tailwind/react';
 import { useNavigate } from 'react-router-dom';
 
 export default function CheckoutForm() {
+  // State for managing edit mode
   const [editing, setEditing] = useState(false);
+
+  // State for managing user information
   const [userInfo, setUserInfo] = useState({
     name: '',
     address: '',
     phone: '',
     email: '',
   });
-  const [deliveryAddress, setDeliveryAddress] = useState('Samma adress som ovan');
+
+  // State for managing selected payment method
   const [paymentMethod, setPaymentMethod] = useState('Få först. Betala sen.');
   const navigate = useNavigate();
 
+  // Load user info from local storage on component mount
   useEffect(() => {
-    // Load user info from local storage on component mount
     const savedUserInfo = JSON.parse(localStorage.getItem('userInfo'));
     if (savedUserInfo) {
       setUserInfo(savedUserInfo);
     }
   }, []);
 
+  // Handle input change and update user info in state and local storage
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     const newUserInfo = { ...userInfo, [name]: value };
     setUserInfo(newUserInfo);
-    // Save user info to local storage
     localStorage.setItem('userInfo', JSON.stringify(newUserInfo));
   };
 
+  // Toggle edit mode and save user info to local storage when exiting edit mode
   const handleEditToggle = () => {
     setEditing(!editing);
     if (editing) {
-      // Save user info to local storage when exiting edit mode
       localStorage.setItem('userInfo', JSON.stringify(userInfo));
     }
   };
 
+  // Navigate to the checkout end page
   const handlePayment = () => {
     navigate('/checkoutend');
   };
@@ -46,7 +51,7 @@ export default function CheckoutForm() {
     <div className="flex flex-col items-center gap-4 p-4">
       {/* User Information */}
       <div className="w-full max-w-md p-4 border rounded-lg shadow">
-        <h2 className="text-lg font-semibold mb-2">Dina uppgifter.</h2>
+        <h2 className="text-lg font-semibold mb-2">Dina uppgifter</h2>
         {editing ? (
           <div className="flex flex-col gap-2">
             <Input
