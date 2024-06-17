@@ -9,9 +9,9 @@ const Home = () => {
   const [randomProducts2, setRandomProducts2] = useState([]);
 
   useEffect(() => {
-    const selectRandomProducts = (products, excludeProducts = []) => {
+    const selectRandomProducts = (products, excludeProducts = [], count = 4) => {
       const selectedProducts = [];
-      while (selectedProducts.length < 5) {
+      while (selectedProducts.length < count) {
         const randomIndex = Math.floor(Math.random() * products.length);
         const randomProduct = products[randomIndex];
         if (!selectedProducts.includes(randomProduct) && !excludeProducts.includes(randomProduct)) {
@@ -21,11 +21,11 @@ const Home = () => {
       return selectedProducts;
     };
 
-    // Select 5 random products from local JSON for the first set
+    // Select 4 random products from local JSON for the first set
     const randomProducts1 = selectRandomProducts(myProducts);
     setRandomProducts1(randomProducts1);
 
-    // Select 5 random products from local JSON for the second set excluding the first set
+    // Select 4 random products from local JSON for the second set excluding the first set
     const randomProducts2 = selectRandomProducts(myProducts, randomProducts1);
     setRandomProducts2(randomProducts2);
   }, []);
@@ -58,7 +58,7 @@ const Home = () => {
       </header>
       <main className="flex-grow container mx-auto py-8">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 text-black">Featured Products</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"> {/* Adjusted to 4 columns */}
           {randomProducts1.map((product, index) => (
             <ProductCard
               key={index}
@@ -71,7 +71,7 @@ const Home = () => {
       <div className="w-full bg-cover bg-center" style={{ backgroundImage: `url(https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)`, height: '500px' }}></div>
       <main className="flex-grow container mx-auto py-8">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 text-black">Best Sellers</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"> {/* Adjusted to 4 columns */}
           {randomProducts2.map((product, index) => (
             <ProductCard
               key={index}
