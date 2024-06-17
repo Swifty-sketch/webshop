@@ -152,7 +152,7 @@ export default function CheckoutForm() {
               defaultChecked
               className="form-radio"
             />
-            Standardleverans
+            Standardleverans - SEK 29
           </label>
           <label className="flex items-center gap-2">
             <input

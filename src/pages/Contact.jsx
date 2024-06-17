@@ -42,8 +42,8 @@ const Contact = () => {
 
   return (
     <div className="max-w-xl mx-auto p-8">
-      <h1 className="text-4xl text-center text-indigo-600 mb-4 font-poppins font-bold text-black">
-        Contact us
+      <h1 className="text-4xl text-center text-grey-600 mb-4 font-poppins font-bold text-black">
+        Kontakta oss
       </h1>
       <p className="text-center text-gray-600 mb-8">
         Vänligen kontakta oss via vårt formulär eller våra kontaktuppgifter. Vi
@@ -52,7 +52,7 @@ const Contact = () => {
       <form onSubmit={handleSubmit}>
         <div className="flex justify-between mb-4">
           <div className="w-1/2 pr-2">
-            <label className="block text-gray-700 font-bold mb-2">Name</label>
+            <label className="block text-gray-700 font-bold mb-2">Namn</label>
             <input
               type="text"
               name="name"
