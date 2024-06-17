@@ -8,10 +8,10 @@ export default function CheckoutForm() {
 
   // State for managing user information
   const [userInfo, setUserInfo] = useState({
-    name: '',
-    address: '',
-    phone: '',
-    email: '',
+    name: 'Johan Svensson',
+    address: 'Storgatan 12, 123 45 Stockholm',
+    phone: '0701234567',
+    email: 'johan.svensson@example.com',
   });
 
   // State for managing selected payment method

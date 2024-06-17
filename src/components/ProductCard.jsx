@@ -4,7 +4,6 @@ import {
   Card,
   CardHeader,
   CardBody,
-  CardFooter,
   Typography,
 } from "@material-tailwind/react";
 
@@ -19,6 +18,14 @@ const ProductCard = ({ product, handleClick }) => {
 
   const handleCardClick = () => {
     handleClick(product);
+    scrollToTop(); // Call scrollToTop function to scroll up when clicked
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   return (
@@ -47,11 +54,6 @@ const ProductCard = ({ product, handleClick }) => {
             </Typography>
           </div>
         </CardBody>
-        <CardFooter className="pt-0">
-          <div className="mt-auto">
-            {/* Footer content can be added here if needed */}
-          </div>
-        </CardFooter>
       </Card>
     </Link>
   );
